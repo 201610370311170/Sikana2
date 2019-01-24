@@ -1,0 +1,13 @@
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  /* Do not repeat the icon image */
+  width: 20%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 5px 10px 5px 10px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+   /* Add some space below the input */
+  margin-left: 7px;
+  margin-top: 12px;
+
+}

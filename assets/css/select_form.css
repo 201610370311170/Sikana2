@@ -1,0 +1,9 @@
+.select{
+  width: 225px;
+	height: 40px;
+	cursor: pointer;
+	background-color: blue;
+	box-shadow: 0 2px 0 white;
+	border-radius: 2px;
+
+}
