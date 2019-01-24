@@ -6,6 +6,7 @@
     <section class="sidebar">
         <!-- Sidebar user panel -->
         <ul class="sidebar-menu">
+            <br>
             <li class="treeview">
                 <a href="<?php echo site_url('dashboard2')?>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -14,6 +15,7 @@
 
 
             <!-- Link Sidebar -->
+
             <li class="header">KELOLA DATA</li>
             <li>
               <a href="<?php echo site_url('pegawai')?>"><i class="fa fa-user-md"></i> Data Petugas</a>
@@ -32,9 +34,13 @@
                   <li><a href="<?php echo site_url('ibu/#')?>">Data Balita</a></li>
                   <br>
             </ul>
+    
+            <li class="header">DATA RUJUKAN</li>
             <li>
               <a href="<?php echo site_url('rumah_sakit')?>"><i class="fa fa-hospital-o"></i> Rumah Sakit</a>
             </li>
+
+
 
             <!-- <li class="treeview">
                 <a href="<?php echo site_url('ibu')?>">

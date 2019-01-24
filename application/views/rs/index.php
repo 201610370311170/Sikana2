@@ -23,7 +23,7 @@ $this->load->view('template/sidebar');
   <div class="box" id="box">
     <div class="box-body">
         <h3>
-          <i class="fa fa-building"></i> &nbsp <span>Pasien / Bayi </span>
+          <i class="fa fa-building"></i> &nbsp <span>Rumah Sakit</span>
         </h3>
 
         <!-- <span class="pull-right-container">
@@ -63,7 +63,7 @@ $this->load->view('template/sidebar');
                       <td><?php echo $rs['Nama_RS']?></td>
                       <td><?php echo $rs['Alamat_RS']?></td>
                       <td>
-                        <a href="<?php echo base_url().'bayi/edit/'.$rs['id_rs']?>" class="btn btn-success" ><i class="fa fa-edit"></i></a>
+                        <a href="<?php echo base_url().'rumah_sakit/edit/'.$rs['id_rs']?>" class="btn btn-success" ><i class="fa fa-edit"></i></a>
                         <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $rs['id_rs']?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
@@ -88,7 +88,7 @@ $this->load->view('template/sidebar');
               <h4 class="modal-title">Tambahkan Data</h4>
             </div>
 
-              <?php echo form_open('Rumah_sakit/register') ; ?>
+              <?php echo form_open('rumah_sakit/register') ; ?>
               <div class="modal-body">
                     <label>ID Rumah Sakit</label>
                     <input type="text" class="form-control" value="" required name="id_rs" placeholder="ID Rumah Sakit" maxlength="16">
@@ -123,7 +123,7 @@ $this->load->view('template/sidebar');
                     <div class="modal-body">
                           <p>Are you sure want to delete this item?</p>
                           <div class="pull-right">
-                            <a href="<?php echo base_url().'pegawai/remove/'.$rs['id_rs'] ?>" type="button" value="Remove" class="btn btn-danger">Remove</a>
+                            <a href="<?php echo base_url().'rumah_sakit/remove/'.$rs['id_rs'] ?>" type="button" value="Remove" class="btn btn-danger">Remove</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                           </div>
                           <br>
