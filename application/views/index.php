@@ -11,10 +11,11 @@
   <title>SIKANA &amp; Sistem Informasi Ibu dan Anak</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="./img/core-img/ibudananak.png">
+  <link rel="icon" href="<?php echo base_url('assets/img/core-img/ibudananak.png')?>">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/style2.css')?>">
+
 
 </head>
 
@@ -25,6 +26,7 @@
       <div id="dento-load"></div>
     </div>
   </div>
+
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
@@ -53,7 +55,7 @@
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="masuk.html"><img src="./img/core-img/logoo.jpg" alt=""></a>
+            <a class="nav-brand" href="masuk.html"><img src="<?php echo base_url('assets/img/core-img/logoo.jpg')?>" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -71,10 +73,9 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="masuk.html">Beranda</a></li>
-                  <li><a href="about.html">Periksa</a></li>
-                  <li><a href="contact.html">Tutorial</a></li>
-                  <li><a href="login.html">Logout</a></li>
+                  <li><a href="<?php echo base_url();?>">Beranda</a></li>
+                  <li><a href="<?php echo base_url('sikana/tutorial')?>">Tutorial</a></li>
+                  <li><a href="<?php echo base_url('sikana/login')?>">Login</a></li>
               </div>
               <!-- Nav End -->
             </div>
@@ -84,220 +85,228 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <!-- ***** Welcome Area Start ***** -->
-  <section class="welcome-area">
-    <!-- Welcome Slides -->
-    <div class="welcome-slides owl-carousel">
-      <!-- Single Welcome Slide -->
-      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/homeee.jpg);">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12">
-              <!-- Welcome Text -->
-              <div class="welcome-text text-left">
-                <h2 data-animation="fadeInUp" data-delay="100ms">SIKANA</h2>
-                <p data-animation="fadeInUp" data-delay="300ms">Sistem Informasi ibu dan anak untuk mempermudah pelayanan kesehatan. Hal ini dilatar belakangi karena masih menggunakan sistem manual seperti penggunaan kertas atau buku. Dalam SIKANA ini meminimalkan penggunaan kertas atau buku dan memudahkan pekerjaan menjadi efektif dan efisien.</p>
+  <!-- content -->
+  <section class="content">
+
+
+      <!-- ***** Welcome Area Start ***** -->
+      <section class="welcome-area">
+        <!-- Welcome Slides -->
+        <div class="welcome-slides owl-carousel">
+          <!-- Single Welcome Slide -->
+          <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url(assets/img/bg-img/homeee.jpg);">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-12">
+                  <!-- Welcome Text -->
+                  <div class="welcome-text text-left">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">SIKANA</h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Sistem Informasi ibu dan anak untuk mempermudah pelayanan kesehatan. Hal ini dilatar belakangi karena masih menggunakan sistem manual seperti penggunaan kertas atau buku. Dalam SIKANA ini meminimalkan penggunaan kertas atau buku dan memudahkan pekerjaan menjadi efektif dan efisien.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Welcome Area End ***** -->
+
+    <!-- ***** Dento Dentist Area Start ***** -->
+    <section class="dentist-area section-padding-100-0">
+      <div class="container">
+        <div class="row">
+          <!-- Section Heading -->
+          <div class="col-12">
+            <div class="section-heading text-center">
+              <h2>Jadwal Kegiatan Program Kesehatan Ibu dan Anak</h2>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+
+  <!-- ***** Dento Pricing Table Area Start ***** -->
+    <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+      <div style="height: 250px;" class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="dento-price-table table-responsive">
+              <table class="table table-borderless mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Kegiatan</th>
+                    <th scope="col">Desa</th>
+                    <th scope="col">Waktu</th>
+                    <th scope="col">Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1.</th>
+                    <td>Pelayanan ANC</td>
+                    <td>Desa Sidodadi, Kecamatan Lawang</td>
+                    <td>Senin, 27 Januari 2019</td>
+                    <td>Bidan</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2.</th>
+                    <td>Kunjungan Nifas dan Kunjungan Neonatus</td>
+                    <td>Desa Watugede, Kecamatan Singosari</td>
+                    <td>Rabu, 6 Februari 2019</td>
+                    <td>Bidan</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3.</th>
+                    <td>Pelayanan KB (Keluarga Berencana)</td>
+                    <td>Desa Selorejo, Kecamatan Dau</td>
+                    <td>Selasa, 19 Februari 2019</td>
+                    <td>Bidan</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4.</th>
+                    <td>Pencatatan dan Pelaporan</td>
+                    <td>Desa Landungsari, Kecamatan Dau</td>
+                    <td>Kamis, 28 Februari 2019</td>
+                    <td>Bidan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Dento Pricing Table Area End ***** -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Dento Dentist Area End ***** -->
+
+    <!-- ***** Blog Area Start ***** -->
+    <section class="dento-blog-area section-padding-100-0 clearfix">
+      <div class="container">
+        <div class="row">
+          <!-- Section Heading -->
+          <div class="col-12">
+            <div class="section-heading text-center">
+              <h2>Alur Kesehatan Ibu Hamil</h2>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Single Blog Item -->
+          <div class="col-12 col-md-6 col-lg-4" >
+            <div class="single-blog-item mb-100">
+              <a href="./blog-details.html">
+                <img style="margin-left: 110px;" src="<?php echo base_url('assets/img/bg-img/alurr(1).png')?>" alt="">
+              </a>
+              <!-- Blog Content -->
+              <div class="blog-content">
+                <a href="./blog-details.html" class="post-title">Pengukuran Tinggi Badan Cukup Satu Kali</a>
+                <p>Segera ke dokter atau bidan jika terlambat datang bulan. Periksa kehamilan paling sedikit ...</p>
+                <div class="post-meta">
+                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Blog Item -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-item mb-100">
+              <a href="./blog-details.html">
+                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(2).png')?>" alt="">
+              </a>
+              <!-- Blog Content -->
+              <div class="blog-content">
+                <a href="./blog-details.html" class="post-title">Pengukuran Tekanan Darah (tensi)</a>
+                <p>Tekanan darah normal 120/80mmHg. Bila tekanan darah ...</p>
+                <div class="post-meta">
+                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Blog Item -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-item mb-100">
+              <a href="./blog-details.html">
+                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(3).png')?>" alt="">
+              </a>
+              <!-- Blog Content -->
+              <div class="blog-content">
+                <a href="./blog-details.html" class="post-title">Pengukuran Lingkar Lengan Atas (LiLA)</a>
+                <p>Bila < 23,5cm menunjukkan ibu hamil...</p>
+                <div class="post-meta">
+                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Blog Item -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-item mb-100">
+              <a href="./blog-details.html">
+                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
+              </a>
+              <!-- Blog Content -->
+              <div class="blog-content">
+                <a href="./blog-details.html" class="post-title">Pengukuran Tinggi Rahim</a>
+                <p>Pengukuran tinggi rahim berguna untuk...</p>
+                <div class="post-meta">
+                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Blog Item -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-item mb-100">
+              <a href="./blog-details.html">
+                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(5).png')?>" alt="">
+              </a>
+              <!-- Blog Content -->
+              <div class="blog-content">
+                <a href="./blog-details.html" class="post-title">Penentuan Letak Janin(Presentasi Janin) dan Perhitungan Denyut Jantung Janin</a>
+                <p>Apabila trimester III bagian bawah janin bukan kepala atau kepala belum masuk panggul...</p>
+                <div class="post-meta">
+                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Blog Item -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-item mb-100">
+              <a href="./blog-details.html">
+                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
+              </a>
+              <!-- Blog Content -->
+              <div class="blog-content">
+                <a href="./blog-details.html" class="post-title">Penentuan Status Imunisasi Tetanus Toksoid (TT)</a>
+                <p>Petugas untuk slenajutnya bilamana diperlukan mendapatkan suntikan tetanus toksoid sesuai...</p>
+                <div class="post-meta">
+                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-    </div>
+    </section>
+    <!-- ***** Blog Area End ***** -->
+
+
   </section>
-  <!-- ***** Welcome Area End ***** -->
 
-  <!-- ***** Dento Dentist Area Start ***** -->
-  <section class="dentist-area section-padding-100-0">
-    <div class="container">
-      <div class="row">
-        <!-- Section Heading -->
-        <div class="col-12">
-          <div class="section-heading text-center">
-            <h2>Jadwal Kegiatan Program Kesehatan Ibu dan Anak</h2>
-            <div class="line"></div>
-          </div>
-        </div>
-      </div>
-
-<!-- ***** Dento Pricing Table Area Start ***** -->
-  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
-    <div style="height: 250px;" class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="dento-price-table table-responsive">
-            <table class="table table-borderless mb-0">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Kegiatan</th>
-                  <th scope="col">Desa</th>
-                  <th scope="col">Waktu</th>
-                  <th scope="col">Keterangan</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1.</th>
-                  <td>Pelayanan ANC</td>
-                  <td>Desa Sidodadi, Kecamatan Lawang</td>
-                  <td>Senin, 27 Januari 2019</td>
-                  <td>Bidan</td>
-                </tr>
-                <tr>
-                  <th scope="row">2.</th>
-                  <td>Kunjungan Nifas dan Kunjungan Neonatus</td>
-                  <td>Desa Watugede, Kecamatan Singosari</td>
-                  <td>Rabu, 6 Februari 2019</td>
-                  <td>Bidan</td>
-                </tr>
-                <tr>
-                  <th scope="row">3.</th>
-                  <td>Pelayanan KB (Keluarga Berencana)</td>
-                  <td>Desa Selorejo, Kecamatan Dau</td>
-                  <td>Selasa, 19 Februari 2019</td>
-                  <td>Bidan</td>
-                </tr>
-                <tr>
-                  <th scope="row">4.</th>
-                  <td>Pencatatan dan Pelaporan</td>
-                  <td>Desa Landungsari, Kecamatan Dau</td>
-                  <td>Kamis, 28 Februari 2019</td>
-                  <td>Bidan</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ***** Dento Pricing Table Area End ***** -->
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ***** Dento Dentist Area End ***** -->
-
-  <!-- ***** Blog Area Start ***** -->
-  <section class="dento-blog-area section-padding-100-0 clearfix">
-    <div class="container">
-      <div class="row">
-        <!-- Section Heading -->
-        <div class="col-12">
-          <div class="section-heading text-center">
-            <h2>Alur Kesehatan Ibu Hamil</h2>
-            <div class="line"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- Single Blog Item -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img style="margin-left: 110px;" src="./img/bg-img/alurr(1).png" alt="">
-            </a>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Pengukuran Tinggi Badan Cukup Satu Kali</a>
-              <p>Segera ke dokter atau bidan jika terlambat datang bulan. Periksa kehamilan paling sedikit ...</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Blog Item -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img style="margin-left: 90px;" src="./img/bg-img/alurr(2).png" alt="">
-            </a>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Pengukuran Tekanan Darah (tensi)</a>
-              <p>Tekanan darah normal 120/80mmHg. Bila tekanan darah ...</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Blog Item -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img style="margin-left: 90px;" src="./img/bg-img/alurr(3).png" alt="">
-            </a>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Pengukuran Lingkar Lengan Atas (LiLA)</a>
-              <p>Bila < 23,5cm menunjukkan ibu hamil...</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Single Blog Item -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img style="margin-left: 90px;" src="./img/bg-img/alurr(4).png" alt="">
-            </a>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Pengukuran Tinggi Rahim</a>
-              <p>Pengukuran tinggi rahim berguna untuk...</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Single Blog Item -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img style="margin-left: 90px;" src="./img/bg-img/alurr(5).png" alt="">
-            </a>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Penentuan Letak Janin(Presentasi Janin) dan Perhitungan Denyut Jantung Janin</a>
-              <p>Apabila trimester III bagian bawah janin bukan kepala atau kepala belum masuk panggul...</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Single Blog Item -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img style="margin-left: 90px;" src="./img/bg-img/alurr(4).png" alt="">
-            </a>
-            <!-- Blog Content -->
-            <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Penentuan Status Imunisasi Tetanus Toksoid (TT)</a>
-              <p>Petugas untuk slenajutnya bilamana diperlukan mendapatkan suntikan tetanus toksoid sesuai...</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ***** Blog Area End ***** -->
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeeee.jpg);">
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(assets/img/bg-img/homeeee.jpg);">
     <!-- Copywrite Area -->
     <div class="container">
         <div class="col-12">
@@ -312,15 +321,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+  <script src="<?php echo base_url('assets/js/jquery.min.js')?>"></script>
   <!-- Popper js -->
-  <script src="js/popper.min.js"></script>
+  <script src="<?php echo base_url('assets/js/popper.min.js')?>"></script>
   <!-- Bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
   <!-- All js -->
-  <script src="js/dento.bundle.js"></script>
+  <script src="<?php echo base_url('assets/js/dento.bundle.js')?>"></script>
   <!-- Active js -->
-  <script src="js/default-assets/active.js"></script>
+  <script src="<?php echo base_url('assets/js/default-assets/active.js')?>"></script>
 
 </body>
 
