@@ -200,33 +200,31 @@
         <div class="row">
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4" >
-            <div class="single-blog-item mb-100">
+            <div class="single-blog-item mb-100" style="height:500px;">
               <a href="./blog-details.html">
-                <img style="margin-left: 110px;" src="<?php echo base_url('assets/img/bg-img/alurr(1).png')?>" alt="">
+                <img style="margin-left: 110px; height:150px;width:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(1).png')?>" alt="">
               </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a href="./blog-details.html" class="post-title">Pengukuran Tinggi Badan Cukup Satu Kali</a>
                 <p>Segera ke dokter atau bidan jika terlambat datang bulan. Periksa kehamilan paling sedikit ...</p>
-                <div class="post-meta">
-                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-                </div>
+
               </div>
             </div>
           </div>
 
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="single-blog-item mb-100">
+            <div class="single-blog-item mb-100" style="height:500px;">
               <a href="./blog-details.html">
-                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(2).png')?>" alt="">
+                <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(2).png')?>" alt="">
               </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a href="./blog-details.html" class="post-title">Pengukuran Tekanan Darah (tensi)</a>
                 <p>Tekanan darah normal 120/80mmHg. Bila tekanan darah ...</p>
                 <div class="post-meta">
-                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
+
                 </div>
               </div>
             </div>
@@ -234,65 +232,55 @@
 
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="single-blog-item mb-100">
+            <div class="single-blog-item mb-100" style="height:500px;">
               <a href="./blog-details.html">
-                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(3).png')?>" alt="">
+                <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(3).png')?>" alt="">
               </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a href="./blog-details.html" class="post-title">Pengukuran Lingkar Lengan Atas (LiLA)</a>
                 <p>Bila < 23,5cm menunjukkan ibu hamil...</p>
-                <div class="post-meta">
-                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-                </div>
+
               </div>
             </div>
           </div>
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="single-blog-item mb-100">
+            <div class="single-blog-item mb-100" style="height:500px;">
               <a href="./blog-details.html">
-                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
+                <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
               </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a href="./blog-details.html" class="post-title">Pengukuran Tinggi Rahim</a>
                 <p>Pengukuran tinggi rahim berguna untuk...</p>
-                <div class="post-meta">
-                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-                </div>
               </div>
             </div>
           </div>
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="single-blog-item mb-100">
+            <div class="single-blog-item mb-100" style="height:500px;">
               <a href="./blog-details.html">
-                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(5).png')?>" alt="">
+                <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(5).png')?>" alt="">
               </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a href="./blog-details.html" class="post-title">Penentuan Letak Janin(Presentasi Janin) dan Perhitungan Denyut Jantung Janin</a>
                 <p>Apabila trimester III bagian bawah janin bukan kepala atau kepala belum masuk panggul...</p>
-                <div class="post-meta">
-                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-                </div>
               </div>
             </div>
           </div>
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="single-blog-item mb-100">
+            <div class="single-blog-item mb-100" style="height:500px;">
               <a href="./blog-details.html">
-                <img style="margin-left: 90px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
+                <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
               </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a href="./blog-details.html" class="post-title">Penentuan Status Imunisasi Tetanus Toksoid (TT)</a>
                 <p>Petugas untuk slenajutnya bilamana diperlukan mendapatkan suntikan tetanus toksoid sesuai...</p>
-                <div class="post-meta">
-                  <a href="#"><i class="icon_clock_alt"></i> 21 Jan 2019</a>
-                </div>
+
               </div>
             </div>
           </div>

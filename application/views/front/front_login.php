@@ -100,7 +100,7 @@
                 <div class="row h-100 align-items-center">
                 <div style="margin-left: 335px;" class="welcome-btn-group">
                   <h2 style="color: white; text-align: center; height: 90px">MASUK</h2>
-                  <a href="loginadmin.html" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Login Sebagai Admin</a>
+                  <a href="" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Login Sebagai Admin</a>
                  <a href="loginpetugas.html" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Login Sebagai Petugas</a>
                   </div>
                 </div>
