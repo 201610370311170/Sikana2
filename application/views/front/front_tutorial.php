@@ -55,7 +55,7 @@
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="masuk.html"><img src="<?php echo base_url('assets/img/core-img/logoo.jpg')?>" alt=""></a>
+            <a class="nav-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url('assets/img/core-img/logoo.jpg')?>" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">

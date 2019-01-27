@@ -38,5 +38,15 @@
       return $data->result_array();
     }
 
+    public function getAllData($where=""){
+      $data = $this->db->query("select * from ibu where NIK = ".$where);
+      return $data->result_array();
+    }
+
+    public function getAllNIK($where=""){
+      $data = $this->db->query("select NIK from ibu");
+      return $data->result_array();
+    }
+
   }
 ?>

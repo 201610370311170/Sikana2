@@ -55,7 +55,7 @@
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="masuk.html"><img src="<?php echo base_url('assets/img/core-img/logoo.jpg')?>" alt=""></a>
+            <a class="nav-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url('assets/img/core-img/logoo.jpg')?>" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -86,46 +86,43 @@
   <!-- ***** Header Area End ***** -->
 
   <!-- content -->
-  <section class="content">
-
-    <section class="welcome-area">
-      <!-- Welcome Slides -->
-      <div class="welcome-slides owl-carousel">
-        <!-- Single Welcome Slide -->
-        <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url(assets/img/bg-img/homeee.jpg);">
-          <div class="container h-100">
-            <div class="row h-100 align-items-center">
-              <div class="col-12">
-                <!-- Welcome Text -->
-                <div class="row h-100 align-items-center">
-                <div style="margin-left: 335px;" class="welcome-btn-group">
-                  <h2 style="color: white; text-align: center; height: 90px">MASUK</h2>
-                  <a href="" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Login Sebagai Admin</a>
-                 <a href="loginpetugas.html" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Login Sebagai Petugas</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <section class="content" style="padding-bottom:100px;">
+    <h3 style="text-align:center; font-family: arial; margin-top:px;"> LOGIN SEBAGAI : </h3>
+    <div class="row" style="margin-left:320px;margin-top:160px;">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Admin</h5>
+            <p class="card-text">Login sebagai Administrator </p>
+            <a href="<?php echo base_url('admin')?>" class="btn btn-outline-primary">Masuk</a>
           </div>
         </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dokter / Bidan</h5>
+            <p class="card-text">Login sebagai Petugas</p>
+            <a href="<?php echo base_url('pegawai/login/index')?>" class="btn btn-outline-primary">Login</a>
+          </div>
         </div>
       </div>
-    </section>
-
+    </div>
   </section>
 
 
   <!-- ***** Footer Area Start ***** -->
   <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(assets/img/bg-img/homeeee.jpg);">
     <!-- Copywrite Area -->
-    <div class="container">
-        <div class="col-12">
+
+
           <div class="copywrite-content">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
           </div>
-        </div>
-    </div>
+
+
   </footer>
   <!-- ***** Footer Area End ***** -->
 

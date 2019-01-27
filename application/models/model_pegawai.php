@@ -2,6 +2,14 @@
 
   class model_pegawai extends CI_Model{
 
+      function validate(){
+        $arr['NIP'] = $this->input->post('NIP');
+        $arr['password'] = md5($this->input->post('password'));
+
+        return $this->db->get_where('pegawai', $arr)->row();
+      }
+
+
       public function getData($where=""){
 
         $data = $this->db->query("select * from pegawai ".$where);
@@ -32,12 +40,21 @@
 
     	}
 
-      public function getDataName($where=""){
+      function getDataName($where=""){
 
         $data = $this->db->query("select Nama from pegawai where NIP = ".$where);
         return $data->result_array();
 
       }
+
+      function getAllData($where=""){
+
+        $data = $this->db->query("select * from pegawai where NIP = ".$where);
+        return $data->result_array();
+
+      }
+
+
 
 
 

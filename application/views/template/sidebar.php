@@ -8,7 +8,7 @@
         <ul class="sidebar-menu">
             <br>
             <li class="treeview">
-                <a href="<?php echo site_url('dashboard2')?>">
+                <a href="<?php echo base_url('admin/Dashboard')?>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
@@ -18,7 +18,7 @@
 
             <li class="header">KELOLA DATA</li>
             <li>
-              <a href="<?php echo site_url('pegawai')?>"><i class="fa fa-user-md"></i> Data Petugas</a>
+              <a href="<?php echo site_url('admin/pegawai')?>"><i class="fa fa-user-md"></i> Data Petugas</a>
             </li>
             <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <a href="#"><i class="fa fa-user"></i> Data Pasien <span class="pull-right-container">
@@ -27,38 +27,21 @@
             </li>
             <ul class="sub-menu collapse" id="new">
                   <br>
-                  <li class="active"><a href="<?php echo site_url('ibu')?>">Data Ibu</a></li>
+                  <li class="active"><a href="<?php echo site_url('admin/ibu')?>">Data Ibu</a></li>
                   <br>
-                  <li class="active"><a href="<?php echo site_url('bayi')?>">Data Bayi</a></li>
+                  <li class="active"><a href="<?php echo site_url('admin/bayi')?>">Data Bayi</a></li>
                   <br>
                   <li><a href="<?php echo site_url('ibu/#')?>">Data Balita</a></li>
                   <br>
             </ul>
-    
+
             <li class="header">DATA RUJUKAN</li>
             <li>
-              <a href="<?php echo site_url('rumah_sakit')?>"><i class="fa fa-hospital-o"></i> Rumah Sakit</a>
+              <a href="<?php echo site_url('admin/rumah_sakit')?>"><i class="fa fa-hospital-o"></i> Rumah Sakit</a>
             </li>
-
-
-
-            <!-- <li class="treeview">
-                <a href="<?php echo site_url('ibu')?>">
-                    <i class="fa fa-user"></i> <span>Data Ibu</span>
-                </a>
+            <li>
+              <a href="<?php echo site_url('Adminlogout')?>"><i class="fa fa-sign-out"></i> Logout</a>
             </li>
-            <li class="treeview">
-              <a href="<?php echo site_url('ibu/#')?>">
-                  <i class="fa fa-user"></i> <span>Data Bayi</span>
-              </a>
-            </li> -->
-            <!-- <li class="treeview">
-              <a href="<?php echo site_url('ibu/#')?>">
-                  <i class="fa fa-user"></i> <span>Data Balita</span>
-              </a>
-            </li> -->
-
-
           </ul>
     </section>
     <!-- /.sidebar -->

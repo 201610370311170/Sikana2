@@ -1,10 +1,4 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
-  font: 16px Arial;
-}
 
 /*the container must be positioned relative:*/
 .autocomplete {
@@ -35,23 +29,29 @@ input[type=submit] {
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
+  margin-left: 14px;
+  margin-right: 14px;
   z-index: 99;
   /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
+  top: 45px;
   left: 0;
   right: 0;
 }
 
 .autocomplete-items div {
-  padding: 10px;
+  text-align: center;
+  padding-top:  10px;
+  padding-bottom:   10px;
+
   cursor: pointer;
   background-color: #fff;
   border-bottom: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
 }
 
 /*when hovering an item:*/
 .autocomplete-items div:hover {
-  background-color: #e9e9e9;
+  background-color: #00aeef;
 }
 
 /*when navigating through the items using the arrow keys:*/

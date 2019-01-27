@@ -14,9 +14,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     function login(){
-
       $this->load->view('front/front_login');
     }
+
 
   }
 
