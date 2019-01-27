@@ -103,7 +103,7 @@
           <div class="card-body">
             <h5 class="card-title">Dokter / Bidan</h5>
             <p class="card-text">Login sebagai Petugas</p>
-            <a href="<?php echo base_url('pegawai/login/index')?>" class="btn btn-outline-primary">Login</a>
+            <a href="<?php echo base_url('pegawai')?>" class="btn btn-outline-primary">Login</a>
           </div>
         </div>
       </div>

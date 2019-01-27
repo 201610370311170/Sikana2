@@ -7,6 +7,8 @@
       $this->load->model('model_ibu');
       $this->load->model('model_kesehatan_ibu');
 
+      if( !$this->session->userdata('pegawai'))
+				redirect('pegawai');
     }
 
     function NotFound(){
@@ -19,7 +21,7 @@
 
       $data['data_ibu'] = $this->model_ibu->getAllData($NIK);
       $data['riwayat']  = $this->model_kesehatan_ibu->getAllData($NIK);
-      // 
+      //
       // echo "<pre>";
       // print_r($data);
       // echo "</pre>";

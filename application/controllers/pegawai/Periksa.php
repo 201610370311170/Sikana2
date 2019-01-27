@@ -5,7 +5,8 @@
       parent::__construct();
 
       $this->load->model('model_ibu');
-
+      if( !$this->session->userdata('pegawai'))
+				redirect('pegawai');
     }
 
     function index(){

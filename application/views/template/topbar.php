@@ -4,7 +4,7 @@
     <div class="wrapper">
 
         <header class="main-header">
-            <a href="#" class="logo"><b>Admin</b>LTE</a>
+            <a href="<?php echo base_url();?>" class="logo"><b>SIKANA</b></a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
               <!-- Sidebar toggle button-->
@@ -23,7 +23,7 @@
                         <!-- Messages: style can be found in dropdown.less-->
 
                         <!-- User Account: style can be found in dropdown.less -->
-                    
+
                     </ul>
                 </div>
             </nav>
