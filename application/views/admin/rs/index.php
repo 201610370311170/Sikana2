@@ -20,17 +20,12 @@ $this->load->view('template/sidebar');
 <section class="content" >
   <?php echo validation_errors();?>
   <div class="main" id="main">
-  <div class="box" id="box">
-    <div class="box-body">
-        <h3>
-          <i class="fa fa-building"></i> &nbsp <span>Rumah Sakit</span>
-        </h3>
-
-        <!-- <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span> -->
-    </div>
-  </div>
+    <nav class="breadcrumb " style="background-color:white">
+      <h5>
+        <a class="breadcrumb-item" href="<?php echo base_url('admin/dashboard')?>">Home /</a>
+        <span class="breadcrumb-item active">Data Rumah Sakit</span>
+      </h5>
+    </nav>
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
 

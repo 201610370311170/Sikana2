@@ -21,20 +21,18 @@ $this->load->view('template/sidebar');
 
 <!-- Main content -->
 <section class="content">
-  <div class="main" id="main">
-  <div class="box" id="box">
-    <div class="box-body">
-        <h3>
-          <i class="fa fa-user-md"></i> &nbsp <span>Pegawai </span>
-        </h3>
+        <?php echo $this->session->flashdata('success');?>
 
-        <!-- <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span> -->
-    </div>
-  </div>
+        <div class="main" id="main">
+          <nav class="breadcrumb " style="background-color:white">
+            <h5>
+              <a class="breadcrumb-item" href="<?php echo base_url('admin/dashboard')?>">Home /</a>
+              <span class="breadcrumb-item active">Data Pegawai</span>
+            </h5>
+          </nav>
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
+
         <div class="box">
           <!-- <div class="box" style="background-color:white"> -->
 
@@ -43,7 +41,7 @@ $this->load->view('template/sidebar');
             <div class="pull-right" style="margin-bottom:20px;">
               <a class="btn btn-success" data-toggle="modal" data-target="#myModalRegister"><i class="fa fa-plus">&nbspTambahkan Data</i></a>
             </div>
-              <table id="dtBasicExample" class="table table-bordered table-striped" style="border-top:none">
+              <table id="dtBasicExample" class="table table-bordered table-striped" style="border-top:none;">
                 <thead>
                 <tr>
                   <th>NIP</th>
@@ -68,7 +66,7 @@ $this->load->view('template/sidebar');
                     <td>
                       <!-- <button type="button" class="btn btn-link"><i class="fa fa-eye"></i></button> -->
                       <a href="<?php echo base_url().'admin/pegawai/edit/'.$NIP?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                      <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete"><i class="fa fa-trash"></i></a>
+                      <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $NIP?>"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach;?>
@@ -132,12 +130,9 @@ $this->load->view('template/sidebar');
             $Nama    = $rec['Nama'];
             $Jabatan = $rec['Jabatan'];
             $Alamat  = $rec['Alamat'];
+        ?>
 
-
-            ?>
-
-
-            <div class="modal fade" id="modalDelete" role="dialog">
+            <div class="modal fade" id="modalDelete<?php echo $NIP ?>" role="dialog">
               <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -166,16 +161,6 @@ $this->load->view('template/sidebar');
 </section><!-- /.content -->
 
 
-<!-- Delete Confirmation -->
-<script>
-function confirmDelete(url) {
-    if (confirm("Are you sure you want to delete this?")) {
-        window.location.replace(url);
-    } else {
-        false;
-    }
-}
-</script>
 
 
 <?php

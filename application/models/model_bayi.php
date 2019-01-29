@@ -33,6 +33,11 @@
 
     }
 
+    function countData(){
+      $count = $this->db->query("select count(*) from bayi");
+      return $count->row();
+    }
+
 
   }
 ?>

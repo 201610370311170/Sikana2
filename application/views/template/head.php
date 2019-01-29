@@ -27,3 +27,23 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+        <!-- modal logout -->
+        <div class="modal fade" id="logout" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="modal-body">
+                          <p>Ingin Keluar Sekarang?</p>
+                          <div class="pull-right">
+                            <a href="<?php echo base_url('admin/logout')?>" type="button" value="Remove" class="btn btn-danger">Keluar </a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                          <br>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>

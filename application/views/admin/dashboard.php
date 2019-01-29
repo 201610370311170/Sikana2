@@ -14,55 +14,116 @@ $this->load->view('template/head');
 <!-- Daterange picker -->
 <link href="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/daterangepicker/daterangepicker-bs3.css') ?>" rel="stylesheet" type="text/css" />
 
+<script src="<?php echo base_url('assets/js/anychart-pie.min.js')?>"></script>
+<script src="<?php echo base_url('assets/js/anychart-core.min.js')?>"></script>
+
 <!-- TOPBAR & SIDEBAR -->
 <?php
 $this->load->view('template/topbar');
 $this->load->view('template/sidebar');
 ?>
 
+<div class="main" style="margin-left:20px;">
 
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Dashboard
-        <?php echo $this->session->userdata('admin'); ?>
-        <small>Version 2.0</small>
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+      <h1>
+          <b>Dashboard</b>
+      </h1>
+      <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Dashboard</li>
+      </ol>
+  </section>
 
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-    </ol>
-</section>
+  <!-- Main content -->
+  <section class="content">
 
-<!-- Main content -->
-<section class="content">
-    <!-- Info boxes -->
-    <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">CPU Traffic</span>
-                    <span class="info-box-number">90<small>%</small></span>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Likes</span>
-                    <span class="info-box-number">41,410</span>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
+      <!-- Info boxes -->
+      <div class="row">
+        <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>
+                  <?php foreach ($jumlahDataIbu as $jumlahDataIbu);
+                    echo $jumlahDataIbu;
+                  ?>
+                </h3>
 
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
+                <p>Jumlah Data Ibu</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-user"></i>
+              </div>
+              <a href="<?php echo base_url('admin/ibu')?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
 
-</section><!-- /.content -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+              <div class="inner">
+                <h3>
+                  <?php foreach ($jumlahDataBayi as $jumlahDataBayi);
+                    echo $jumlahDataBayi;
+                  ?>
+                </h3>
 
+                <p>Jumlah Data Anak</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-user"></i>
+              </div>
+              <a href="<?php echo base_url('admin/bayi')?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+              <div class="inner">
+                <h3>
+                  <?php foreach ($jumlahDataPegawai as $jumlahDataPegawai);
+                    echo $jumlahDataPegawai;
+                  ?>
+                </h3>
+
+                <p>Jumlah Data Pegawai</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-user-md"></i>
+              </div>
+              <a href="<?php echo base_url('admin/pegawai')?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>
+                  <?php foreach ($jumlahDataRS as $jumlahDataRS);
+                    echo $jumlahDataRS;
+                  ?>
+                </h3>
+
+                <p>Jumlah Data RS</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-hospital-o"></i>
+              </div>
+              <a href="<?php echo base_url('admin/rumah_sakit')?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </section>
+
+</div>
 
 
 <?php

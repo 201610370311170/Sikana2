@@ -54,6 +54,10 @@
 
       }
 
+      function countData(){
+        $count = $this->db->query("select count(*) from pegawai");
+        return $count->row();
+      }
 
 
 

@@ -17,8 +17,17 @@ $this->load->view('template/sidebar');
 
 <!-- Main content -->
 <section class="content" >
+  <?php echo $this->session->flashdata('success');?>
   <?php echo validation_errors();?>
   <div class="main" id="main">
+    <nav class="breadcrumb " style="background-color:white">
+      <h5>
+        <a class="breadcrumb-item" href="<?php echo base_url('admin/dashboard')?>">Home /</a>
+        <a class="breadcrumb-item" href="<?php echo base_url('admin/ibu')?>">Data Ibu /</a>
+        <span class="breadcrumb-item active">Kesehatan </a>
+
+      </h5>
+    </nav>
   <div class="box" id="box">
     <div class="box-body" >
         <h3 style="margin-left: 50px;">
@@ -71,11 +80,6 @@ $this->load->view('template/sidebar');
               <span style="margin-right: 50px;">: </span>
               <?php echo "\t".$data['Nomor_Telefon']?>
             </p>
-            <p>
-              <span style="margin-right: 35px;">Dokter Damping </span>
-              <span style="margin-right: 50px;">: </span>
-              <?php echo "\t".$data['Dokter_damping']?>
-            </p>
             <br><br>
           </div>
         <?php endforeach; ?>
@@ -89,8 +93,10 @@ $this->load->view('template/sidebar');
           <div class="box-body">
             <h3 style="margin-left: 50px;">
               <i class="fa fa-calendar"></i> &nbsp <span >Riwayat Periksa</span>
+
             </h3>
             <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> -->
+            <div style=" overflow-x:auto;">
             <div class="pull-right" style="margin-bottom:20px;margin-right:10px;">
               <a class="btn btn-success" data-toggle="modal" data-target="#myModalRegister"><i class="fa fa-plus">&nbspTambahkan Data</i></a>
             </div>
@@ -131,6 +137,7 @@ $this->load->view('template/sidebar');
 
                     <tr>
 
+
                       <td><?php echo $newDate?></td>
                       <td><?php echo $riwayat['Keluhan_sekarang'];?></td>
                       <td><?php echo $riwayat['Tekanan_darah'];?></td>
@@ -149,7 +156,7 @@ $this->load->view('template/sidebar');
                   <?php endforeach;?>
                 </tbody>
               </table>
-
+            </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
@@ -158,55 +165,56 @@ $this->load->view('template/sidebar');
 
       <!-- <=====================Modal register======================> -->
 
-      <div class="modal fade" id="myModalRegister" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal fade" id="myModalRegister" role="dialog">
+          <div class="modal-dialog">
 
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Tambahkan Data Periksa</h4>
-            </div>
-
-              <?php echo form_open('admin/ibu/tambah_data_kesehatan'); ?>
-              <div class="modal-body">
-                    <label>Tanggal Periksa</label>
-                    <input type="hidden" class="form-control" value="<?php echo $data['id_periksa']?>" required name="NIK">
-                    <input type="date" class="form-control" value="" required name="Tanggal_periksa">
-              </div>
-              <div class="modal-body">
-                    <label>Tekanan Darah</label>
-                    <input type="text" class="form-control" value="" name="Tekanan_darah" required placeholder="Tekanan Darah Pasien">
-              </div>
-              <div class="modal-body">
-                    <label>Berat Badan</label>
-                    <input type="number" class="form-control" value="" required name="Berat_badan" placeholder="Berat Badan Pasien" >
-              </div>
-              <div class="modal-body">
-                    <label>Umur Kehamilan</label>
-                    <input type="number" class="form-control" value="" required name="Umur_kehamilan" placeholder="Umur Kehamilan (Minggu)" >
-              </div>
-              <div class="modal-body">
-                    <label>Tinggi Fundus</label>
-                    <input type="text" class="form-control" value="" required  name="Tinggi_fundus" placeholder="Tinggi Fundus (cm)" >
-              </div>
-              <div class="modal-body">
-                    <label>Letak Janin</label>
-                    <input type="text" class="form-control" value="" required  name="Letak_janin" placeholder="Letak Janin" >
-              </div>
-              <div class="modal-body">
-                    <label>Denyut Jantung Janin</label>
-                    <input type="number" class="form-control" value="" required  name="Denyut_jantung_janin" placeholder="per menit" >
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Tambahkan Data Periksa</h4>
               </div>
 
+                <?php echo form_open('admin/ibu/tambah_data_kesehatan/'.$riwayat['NIK_Ibu']); ?>
+                <div class="modal-body">
+                      <label>Tanggal Periksa</label>
+                      <input type="hidden" class="form-control" value="<?php echo $riwayat['NIK_Ibu']?>" required name="NIK_Ibu">
+                      <input type="date" class="form-control" value="" required name="Tanggal_periksa">
+                </div>
+                <div class="modal-body">
+                      <label>Tekanan Darah</label>
+                      <input type="text" class="form-control" value="" name="Tekanan_darah" required placeholder="Tekanan Darah Pasien">
+                </div>
+                <div class="modal-body">
+                      <label>Berat Badan</label>
+                      <input type="number" class="form-control" value="" required name="Berat_badan" placeholder="Berat Badan Pasien" >
+                </div>
+                <div class="modal-body">
+                      <label>Umur Kehamilan</label>
+                      <input type="number" class="form-control" value="" required name="Umur_kehamilan" placeholder="Umur Kehamilan (Minggu)" >
+                </div>
+                <div class="modal-body">
+                      <label>Tinggi Fundus</label>
+                      <input type="text" class="form-control" value="" required  name="Tinggi_fundus" placeholder="Tinggi Fundus (cm)" >
+                </div>
+                <div class="modal-body">
+                      <label>Letak Janin</label>
+                      <input type="text" class="form-control" value="" required  name="Letak_janin" placeholder="Letak Janin" >
+                </div>
+                <div class="modal-body">
+                      <label>Denyut Jantung Janin</label>
+                      <input type="number" class="form-control" value="" required  name="Denyut_jantung_janin" placeholder="per menit" >
+                </div>
 
-            <div class="modal-footer">
-              <input type="submit" class="btn btn-success" value="Submit" style="width:100px;"></input>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Submit" style="width:100px;"></input>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
 
       <!-- <=====================Modal register======================> -->
 

@@ -23,6 +23,11 @@
 
     }
 
+    function countData(){
+      $count = $this->db->query("select count(*) from ibu");
+      return $count->row();
+    }
+
 
   }
 

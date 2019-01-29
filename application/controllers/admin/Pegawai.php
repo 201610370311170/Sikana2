@@ -48,7 +48,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   			// print_r($datas);
   			// die;
-
+        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
+          Data Berhasil ditambahkan
+        </div>');
   			$this->model_pegawai->register($datas);
   			redirect('/admin/pegawai');
   		}

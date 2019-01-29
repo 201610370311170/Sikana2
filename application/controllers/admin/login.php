@@ -4,7 +4,7 @@
 
     function __construct(){
       parent::__construct();
-
+      $this->load->model('Admin');
       if($this->session->userdata('admin'))
         redirect('admin/dashboard');
     }
@@ -23,17 +23,12 @@
         redirect('admin/dashboard');
       }
       else{
+        $this->session->set_flashdata('warning', 'Masuk gagal. Silahkan coba lagi');
         redirect('admin');
       }
 
     }
 
-    function logout(){
-
-      $this->session->unset_userdata('admin');
-      $this->session->sess_destroy();
-      redirect('admin');
-    }
 
   }
 

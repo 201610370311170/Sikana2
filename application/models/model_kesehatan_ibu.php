@@ -48,5 +48,10 @@
       return $data->result_array();
     }
 
+    public function getID_Data(){
+      $data = $this->db->query("select id_periksa from kesehatan_ibu");
+      return $data->result_array();
+    }
+
   }
 ?>

@@ -1,111 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="SIKANA &amp;">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Title -->
-  <title>SIKANA &amp; Sistem Informasi Ibu dan Anak</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="<?php echo base_url('assets/img/core-img/ibudananak.png')?>">
-
-  <!-- autocomplete -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/autocomplete.css')?>">
-
-
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/style2.css')?>">
-
-
-</head>
-
-<body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="preload-content">
-      <div id="dento-load"></div>
-    </div>
-  </div>
-
-  <?php
-    $pegawai = $this->session->userdata('pegawai');
-  ?>
-
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area">
-    <!-- Top Header Area -->
-    <div class="top-header-area">
-      <div class="container h-100">
-        <div class="row h-100 align-items-center">
-          <!-- Top Content -->
-          <div class="col-6 col-md-9 col-lg-8">
-            <div class="top-header-content">
-              <a href="maps.html" data-toggle="tooltip" data-placement="bottom" title="Jl. Tugu No.1, Kiduldalem, Klojen, Kota Malang, Jawa Timur 65119"><i class="fa fa-map-marker"></i> <span>Kota Malang </span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.sikana@gmail.com"><i class="fa fa-envelope"></i> <span>Email</span></a>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Top Header End -->
-
-    <!-- Main Header Start -->
-    <div class="main-header-area">
-      <div class="classy-nav-container breakpoint-off">
-        <div class="container">
-          <!-- Classy Menu -->
-          <nav class="classy-navbar justify-content-between" id="dentoNav">
-
-            <!-- Logo -->
-            <a class="nav-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url('assets/img/core-img/logoo.jpg')?>" alt=""></a>
-
-            <!-- Navbar Toggler -->
-            <div class="classy-navbar-toggler">
-              <span class="navbarToggler"><span></span><span></span><span></span></span>
-            </div>
-
-            <!-- Menu -->
-            <div class="classy-menu">
-
-              <!-- Close Button -->
-              <div class="classycloseIcon">
-                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-              </div>
-
-              <!-- Nav Start -->
-              <div class="classynav">
-                <ul id="nav">
-                  <li><a href="<?php echo base_url('pegawai/dashboard');?>">Beranda</a></li>
-                  <li><a href="<?php echo base_url('pegawai/periksa')?>">Periksa</a></li>
-                  <li><a href="<?php echo base_url('pegawai/#')?>">Tutorial</a></li>
-                  <li>
-                    <a  href="#" role="text" id="dropdownMenuLink" data-toggle="dropdown">
-                      <?php echo $pegawai['Nama'];?>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="<?php echo site_url('pegawai/login/logout')?>">Logout</a>
-                    </a>
-
-
-                    </div>
-                  </li>
-              </div>
-              <!-- Nav End -->
-            </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
 
   <!-- content -->
   <section class="content">
-
+    <?php
+      $pegawai = $this->session->userdata('pegawai');
+    ?>
     <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
@@ -130,7 +28,6 @@
       </div>
     </div>
     <!-- ***** Breadcrumb Area End ***** -->
-
     <!-- card info -->
     <div class="main" id="main">
     <div class="box" id="box">
@@ -186,11 +83,6 @@
                 <span style="margin-right: 50px;">: </span>
                 <?php echo $data_ibu[0]['Nomor_Telefon'];?>
               </p>
-              <p>
-                <span style="margin-right: 25px;">Dokter Damping </span>
-                <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Dokter_damping'];?>
-              </p>
               <br><br>
             </div>
       </div>
@@ -202,12 +94,13 @@
     <div class="clearfix visible-sm-block"></div>
 
     <section class="dentist-area section-padding-100-0">
-      <div class="container">
+      <div class="container" style="margin-bottom:250px;">
         <div class="row">
           <!-- Section Heading -->
           <div class="col-12">
             <div class="section-heading text-center">
               <h2>Riwayat Pemeriksaan Pasien</h2>
+                
               <div class="line"></div>
             </div>
           </div>
@@ -216,17 +109,19 @@
   <!-- ***** Dento Pricing Table Area Start ***** -->
     <section class="dento-pricing-table-area mt-50 section-padding-0-100">
       <div style="height: 250px;" class="container">
-        <div class="row">
-          <div class="col-12">
+        <div class="row" >
+          <div class="col-12" >
             <div class="dento-price-table table-responsive">
-              <table class="table table-borderless mb-0">
+              <table class="table table-borderless mb-0" >
                 <thead>
                   <tr>
                     <th scope="col">Tanggal Periksa</th>
                     <th scope="col">Keluhan Sekarang</th>
+                    <th scope="col">Obat</th>
                     <th scope="col">Tekanan Darah</th>
                     <th scope="col">Berat Badan</th>
                     <th scope="col">Umur Kehamilan</th>
+                    <th scope="col">Dokter Periksa</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -239,10 +134,29 @@
                   ?>
                   <tr>
                     <th><?php echo $newDate;?></th>
-                    <td> </td>
-                    <td><?php echo $riwayat['Tekanan_darah'];?></td>
+
+
+                    <td>
+                      <?php
+                        if($riwayat['Keluhan_sekarang'] != NULL){
+                          echo $riwayat['Keluhan_sekarang'];
+                        } else{ ?>
+                          <a href="#" data-toggle="modal" data-target="#modal<?php echo $riwayat['id_periksa'];?>" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Tambahkan </i></a>
+                      <?php } ?>
+                    </td>
+
+                    <td><?php echo $riwayat['Obat'];?></td>
+                    <td><?php echo $riwayat['Tekanan_darah']. " mmhg";?></td>
                     <td><?php echo $riwayat['Berat_badan']." Kg";?></td>
                     <td><?php echo $riwayat['Umur_kehamilan']." Minggu";?></td>
+                    <td>
+                      <?php
+                      if($riwayat['dokter_periksa'] == 0){
+                        echo "";
+                      }else{
+                        echo $riwayat['dokter_periksa'];
+                      }?>
+                    </td>
                   </tr>
                 </tbody>
               <?php endforeach;?>
@@ -252,48 +166,46 @@
         </div>
       </div>
     </section>
+
     <!-- ***** Dento Pricing Table Area End ***** -->
           </div>
         </div>
       </div>
     </section>
 
+    <?php foreach ($id_data as $id): ?>
 
-    <!-- ****** About Us Area Start ******* -->
+    <!-- modal  -->
+    <div class="modal fade" id="modal<?php echo $id['id_periksa'] ?>" role="dialog">
+      <div class="modal-dialog">
 
-    <section class="dento-about-us-area mt-50 mb-100">
+        <!-- Modal content-->
+        <form action="<?php echo base_url('pegawai/Hasil/update_riwayat/'.$data_ibu[0]['NIK'])?>" method="post">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Tambahkan Data</h4>
+            </div>
+              <div class="modal-body">
+                    <label>Keluhan</label>
+                    <textarea type="text" class="form-control" value="" required name="Keluhan_sekarang"></textarea>
+              </div>
+              <div class="modal-body">
+                    <label>Obat / Resep</label>
+                    <input type="text" class="form-control" value="" name="Obat" required ></input>
+                    <input type="hidden" class="form-control" value="<?php echo $id['id_periksa']?>" name="id_periksa" required ></input>
+                    <input type="hidden" class="form-control" value="<?php echo $pegawai['NIP'];?>" name="dokter_periksa" required ></input>
 
-    </section>
+              <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Submit" style="width:100px;"></input>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+              </div>
+            </div>
+        </form>
+      </div>
+  </div>
+  <?php endforeach; ?>
 
-  </section>
 
 
-  <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(assets/img/bg-img/homeeee.jpg);">
-    <!-- Copywrite Area -->
-    <div class="container">
-        <div class="col-12">
-          <div class="copywrite-content">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
-          </div>
-        </div>
-    </div>
-  </footer>
-  <!-- ***** Footer Area End ***** -->
-
-  <!-- ******* All JS ******* -->
-  <!-- jQuery js -->
-  <script src="<?php echo base_url('assets/js/jquery.min.js')?>"></script>
-  <!-- Popper js -->
-  <script src="<?php echo base_url('assets/js/popper.min.js')?>"></script>
-  <!-- Bootstrap js -->
-  <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
-  <!-- All js -->
-  <script src="<?php echo base_url('assets/js/dento.bundle.js')?>"></script>
-  <!-- Active js -->
-  <script src="<?php echo base_url('assets/js/default-assets/active.js')?>"></script>
-
-</body>
-
-</html>
+</section>

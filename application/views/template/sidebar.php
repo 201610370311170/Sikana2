@@ -1,5 +1,4 @@
 
-
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -18,7 +17,7 @@
 
             <li class="header">KELOLA DATA</li>
             <li>
-              <a href="<?php echo site_url('admin/pegawai')?>"><i class="fa fa-user-md"></i> Data Petugas</a>
+              <a href="<?php echo site_url('admin/pegawai')?>"><i class="fa fa-user-md"></i> Data Pegawai</a>
             </li>
             <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <a href="#"><i class="fa fa-user"></i> Data Pasien <span class="pull-right-container">
@@ -29,9 +28,7 @@
                   <br>
                   <li class="active"><a href="<?php echo site_url('admin/ibu')?>">Data Ibu</a></li>
                   <br>
-                  <li class="active"><a href="<?php echo site_url('admin/bayi')?>">Data Bayi</a></li>
-                  <br>
-                  <li><a href="<?php echo site_url('ibu/#')?>">Data Balita</a></li>
+                  <li class="active"><a href="<?php echo site_url('admin/bayi')?>">Data Anak</a></li>
                   <br>
             </ul>
 
@@ -39,10 +36,17 @@
             <li>
               <a href="<?php echo site_url('admin/rumah_sakit')?>"><i class="fa fa-hospital-o"></i> Rumah Sakit</a>
             </li>
+            <li class="header">Keluar</li>
             <li>
-              <a href="<?php echo site_url('Adminlogout')?>"><i class="fa fa-sign-out"></i> Logout</a>
+              <a href="" data-toggle="modal" data-target="#logout"><i class="fa fa-power-off"></i> Keluar</a>
             </li>
           </ul>
+
+          
+
+
+
+
     </section>
     <!-- /.sidebar -->
 </aside>

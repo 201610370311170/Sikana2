@@ -11,17 +11,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     function index(){
-
+      $this->load->view('pegawai/include/header');
       $this->load->view('index');
+      $this->load->view('pegawai/include/footer');
     }
 
     function tutorial(){
-
+      $this->load->view('pegawai/include/header');
       $this->load->view('front/front_tutorial');
+      $this->load->view('pegawai/include/footer');
     }
 
     function login(){
+      $this->load->view('pegawai/include/header');
       $this->load->view('front/front_login');
+      $this->load->view('pegawai/include/footer');
     }
 
 

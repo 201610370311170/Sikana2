@@ -7,6 +7,14 @@ $this->load->view('template/sidebar');
 
 <!-- content -->
 <section class="content" id="main">
+  <div class="main" id="main">
+    <nav class="breadcrumb " style="background-color:white">
+      <h5>
+        <a class="breadcrumb-item" href="<?php echo base_url('admin/dashboard')?>">Home /</a>
+        <a class="breadcrumb-item" href="<?php echo base_url('admin/ibu')?>">Data Ibu /</a>
+        <span class="breadcrumb-item active">Edit Data</span>
+      </h5>
+    </nav>
   <div class="clearfix visible-sm-block"></div>
     <div class="box">
       <div style="background-color:white">
@@ -29,18 +37,6 @@ $this->load->view('template/sidebar');
               <div class="form-group">
                 <label>Nomor HP</label>
                 <input type="text" class="form-control" required name="Nomor_Telefon" value="<?php echo $ibu['Nomor_Telefon'] ?>">
-              </div>
-              <div>
-                <label>Dokter Damping</label>
-                <select name="Dokter_damping" value="<?php echo set_value($ibu['Dokter_damping'])?>" style="width:100%;  height:30px;">
-                <?php foreach ($pegawai as $pegawai) { ?>
-                      <option value="<?php echo $pegawai['NIP']?>" > <?php
-                        echo $pegawai['NIP'];
-                        echo "  ";
-                        echo $pegawai['Nama']; ?>
-                      </option>
-                  <?php  } ?>
-                </select>
               </div>
               <br><br>
               <div class="form-group">

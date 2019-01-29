@@ -7,6 +7,13 @@ $this->load->view('template/sidebar');
 
 <!-- content -->
 <section class="content" id="main">
+  <nav class="breadcrumb " style="background-color:white">
+    <h5>
+      <a class="breadcrumb-item" href="<?php echo base_url('admin/dashboard')?>">Home /</a>
+      <a class="breadcrumb-item" href="<?php echo base_url('admin/rumah_sakit')?>">Data Rumah Sakit /</a>
+      <span class="breadcrumb-item active">Edit Data</span>
+    </h5>
+  </nav>
   <div class="clearfix visible-sm-block"></div>
     <div class="box">
       <div style="background-color:white; height:100%" >

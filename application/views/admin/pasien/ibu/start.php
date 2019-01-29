@@ -18,18 +18,16 @@ $this->load->view('template/sidebar');
 <!-- Main content -->
 <section class="content" >
   <?php echo validation_errors();?>
+  <?php echo $this->session->flashdata('success');?>
   <div class="main" id="main">
-  <div class="box" id="box">
-    <div class="box-body">
-        <h3>
-          <i class="fa fa-user"></i> &nbsp <span>Pasien / Ibu </span>
-        </h3>
-
-        <!-- <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span> -->
-    </div>
-  </div>
+    <div class="main" id="main">
+      <div class="main" id="main">
+        <nav class="breadcrumb " style="background-color:white">
+          <h5>
+            <a class="breadcrumb-item" href="<?php echo base_url('admin/dashboard')?>">Home /</a>
+            <span class="breadcrumb-item active">Data Ibu</span>
+          </h5>
+        </nav>
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
 
@@ -37,10 +35,12 @@ $this->load->view('template/sidebar');
             <!-- /.card-header -->
           <div class="box-body">
             <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> -->
-            <div class="pull-right" style="margin-bottom:20px;margin-right:10px;">
-              <a class="btn btn-success" data-toggle="modal" data-target="#myModalRegister"><i class="fa fa-plus">&nbspTambahkan Data</i></a>
-            </div>
-              <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+
+            <div style="overflow-x:auto;">
+              <div class="pull-right" style="margin-bottom:20px;margin-right:10px;">
+                <a class="btn btn-success" data-toggle="modal" data-target="#myModalRegister"><i class="fa fa-plus">&nbspTambahkan Data</i></a>
+              </div>
+              <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%" style="overflow-x:auto;">
                 <thead>
                   <tr>
                     <th class="th-sm">No. Pasien
@@ -56,8 +56,6 @@ $this->load->view('template/sidebar');
                     <th class="th-sm">Alamat
                     </th>
                     <th class="th-sm">No HP
-                    </th>
-                    <th class="th-sm">Dokter Damping
                     </th>
                     <th class="th-sm">Kesehatan
                     </th>
@@ -88,9 +86,9 @@ $this->load->view('template/sidebar');
                       <td><?php echo $rec['Umur'];?></td>
                       <td><?php echo $rec['Alamat']?></td>
                       <td><?php echo $rec['Nomor_Telefon']?></td>
-                      <td><?php echo $rec['Dokter_damping']?></td>
-                      <td><a href="<?php echo base_url('admin/ibu/kesehatan/').$rec['NIK'];?>">Lihat Kesehatan</a></td>
-
+                      <td>
+                        <a href="<?php echo base_url('admin/ibu/kesehatan/').$rec['NIK'];?>" class="btn btn-light" ><i class="fa fa-book">&nbspLihat Kesehatan</i></a>
+                      </td>
                       <td>
                         <!-- <button type="button" class="btn btn-link"><i class="fa fa-eye"></i></button> -->
                         <a href="<?php echo base_url().'admin/ibu/edit/'.$rec['NIK']?>" class="btn btn-success" ><i class="fa fa-edit"></i></a>
@@ -100,7 +98,7 @@ $this->load->view('template/sidebar');
                   <?php endforeach;?>
                 </tbody>
               </table>
-
+            </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
@@ -139,22 +137,6 @@ $this->load->view('template/sidebar');
                 <label>Nomor HP</label>
                 <input type="text" class="form-control" value="" maxlength="12" required  size=12 name="Nomor_Telefon" placeholder="No HP" >
           </div>
-          <div class="modal-body">
-                <label>Dokter Damping</label>
-                <select name="Dokter_damping" style="width:100%; height:30px; padding:2px 10px;" required>
-                  <option value="" style="width:100%; height:50px; ">--Pilih Nama Dokter--</option>
-
-                    <?php foreach ($data as $data) { ?>
-                        <option value="<?php echo $data['NIP']?>" >
-                          <?php echo $data['NIP'];?>
-
-                          <?php echo $data['Nama'];?>
-                        </option>
-
-                    <?php  } ?>
-
-                </select>
-          </div>
         <div class="modal-footer">
           <input type="submit" class="btn btn-success" value="Submit" style="width:100px;"></input>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -172,7 +154,6 @@ $this->load->view('template/sidebar');
     $NIK            = $rec['NIK'];
     $Alamat         = $rec['Alamat'];
     $Nomor_Telefon  = $rec['Nomor_Telefon'];
-    $Dokter_damping = $rec['Dokter_damping'];
 ?>
 <div class="modal fade" id="modalDelete<?php echo $NIK?>" role="dialog">
   <div class="modal-dialog">

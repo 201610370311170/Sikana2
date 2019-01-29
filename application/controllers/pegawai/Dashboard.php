@@ -11,7 +11,9 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('pegawai/include/header');
 		$this->load->view('pegawai/dashboard');
+		$this->load->view('pegawai/include/footer');
 	}
 
 }

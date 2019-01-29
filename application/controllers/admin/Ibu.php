@@ -49,15 +49,18 @@ class Ibu extends CI_Controller {
 				$Tanggal_lahir	= $data_form['Tanggal_lahir'];
 				$Alamat					= $data_form['Alamat'];
 				$Nomor_Telefon	= $data_form['Nomor_Telefon'];
-				$Dokter_damping = $data_form['Dokter_damping'];
+
 				$datas					= array(
 													'Nama' 					=> $Nama,
 													'NIK'						=> $NIK,
 													'Tgl_lahir'			=> $Tanggal_lahir,
 													'Alamat'				=> $Alamat,
 													'Nomor_Telefon'	=> $Nomor_Telefon,
-													'Dokter_damping'=> $Dokter_damping
+
 				);
+				$this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
+          Data Berhasil ditambahkan
+        </div>');
 				$this->model_ibu->register($datas);
 				redirect('/admin/ibu');
 			}
@@ -76,7 +79,7 @@ class Ibu extends CI_Controller {
 						'Tgl_lahir'			=> $ibu[0]['Tgl_lahir'],
 						'Alamat' 				=> $ibu[0]['Alamat'],
 						'Nomor_Telefon' => $ibu[0]['Nomor_Telefon'],
-						'Dokter_damping'=> $ibu[0]['Dokter_damping']
+
 				);
 			//
 			$d_pegawai = array(
@@ -104,7 +107,7 @@ class Ibu extends CI_Controller {
 				$Tgl_lahir    	= $_POST['Tgl_lahir'];
 				$Alamat					= $_POST['Alamat'];
 				$Nomor_Telefon	= $_POST['Nomor_Telefon'];
-				$Dokter_Damping = $_POST['Dokter_damping'];
+
 
 
 				$data	= array(
@@ -113,7 +116,7 @@ class Ibu extends CI_Controller {
 						'Tgl_lahir'			=> $Tgl_lahir,
 						'Alamat' 				=> $Alamat,
 						'Nomor_Telefon' => $Nomor_Telefon,
-						'Dokter_damping'=> $Dokter_Damping
+
 				);
 				$where = array('NIK' => $NIK);
 
@@ -145,11 +148,13 @@ class Ibu extends CI_Controller {
 		$this->load->view('admin/pasien/ibu/kesehatan_ibu',$data);
 	}
 
-	function tambah_data_kesehatan(){
+	function tambah_data_kesehatan($NIK){
+
+
 
 		$data_form = $this->input->POST(NULL,TRUE);
 		if($data_form){
-			$NIK											= $data_form['NIK'];
+			$NIK_Ibu									= $data_form['NIK_Ibu'];
 			$Tanggal_periksa					= $data_form['Tanggal_periksa'];
 			$Tekanan_darah						= $data_form['Tekanan_darah'];
 			$Berat_badan	  					= $data_form['Berat_badan'];
@@ -158,7 +163,7 @@ class Ibu extends CI_Controller {
 			$Letak_janin	  					= $data_form['Letak_janin'];
 			$Denyut_jantung_janin 		= $data_form['Denyut_jantung_janin'];
 			$datas					= array(
-												'NIK_Ibu'									=> $NIK,
+												'NIK_Ibu'									=> $NIK_Ibu,
 												'Tanggal_periksa' 				=> $Tanggal_periksa,
 												'Tekanan_darah'						=> $Tekanan_darah,
 												'Berat_badan'							=> $Berat_badan,
@@ -176,6 +181,7 @@ class Ibu extends CI_Controller {
 	function hapus_data_kesehatan(){
 			$NIK	= $this->uri->segment(4);
 			$id 	= $this->uri->segment(5);
+			$this->model_kesehatan_ibu->delete_data('kesehatan_ibu',$id);
 			redirect('/admin/ibu/kesehatan/'.$NIK);
 
 	}
