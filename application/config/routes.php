@@ -50,8 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Sikana';
-$route['admin'] = 'admin/login/index';
-$route['pegawai'] = 'pegawai/login/index';
 $route['Adminlogout'] = 'admin/login/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -81,7 +81,7 @@
                   <!-- if not login -->
                   <?php if(!$this->session->userdata('pegawai')){?>
                     <li><a href="<?php echo base_url('sikana/tutorial')?>">Tutorial</a></li>
-                    <li><a href="<?php echo base_url('sikana/login')?>">Login</a></li>
+                    <li><a href="<?php echo base_url('login')?>">Login</a></li>
                   <?php } else {?>
 
                     <!-- if login -->
@@ -91,7 +91,7 @@
                     <a  href="#" role="text" id="dropdownMenuLink" data-toggle="dropdown">
                       <?php echo $pegawai['Nama'];?>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="<?php echo site_url('pegawai/logout')?>">Logout</a>
+                        <a class="dropdown-item" href="<?php echo site_url('Logout')?>">Logout</a>
                     </a>
                   </li>
                   <?php }?>

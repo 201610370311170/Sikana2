@@ -37,7 +37,7 @@
                     <div class="modal-body">
                           <p>Ingin Keluar Sekarang?</p>
                           <div class="pull-right">
-                            <a href="<?php echo base_url('admin/logout')?>" type="button" value="Remove" class="btn btn-danger">Keluar </a>
+                            <a href="<?php echo base_url('Logout')?>" type="button" value="Remove" class="btn btn-danger">Keluar </a>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                           </div>
                           <br>

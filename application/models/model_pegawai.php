@@ -2,6 +2,11 @@
 
   class model_pegawai extends CI_Model{
 
+
+      function getDataLogin($NIP,$password){
+        $data = $this->db->query("select * from pegawai where NIP = ".$username."and password = ".$password ."LIMIT 1");
+      }
+
       function validate(){
         $arr['NIP'] = $this->input->post('NIP');
         $arr['password'] = md5($this->input->post('password'));

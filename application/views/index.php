@@ -27,17 +27,6 @@
       <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** Dento Dentist Area Start ***** -->
-    <section class="dentist-area section-padding-100-0">
-      <div class="container">
-        <div class="row">
-          <!-- Section Heading -->
-          <div class="col-12">
-            <div class="section-heading text-center">
-              <h2>Jadwal Kegiatan Program Kesehatan Ibu dan Anak</h2>
-              <div class="line"></div>
-            </div>
-          </div>
-        </div>
 
     <!-- ***** Blog Area Start ***** -->
     <section class="dento-blog-area section-padding-100-0 clearfix">
