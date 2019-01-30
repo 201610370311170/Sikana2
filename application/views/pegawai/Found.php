@@ -84,95 +84,103 @@
                 <?php echo $data_ibu[0]['Nomor_Telefon'];?>
               </p>
               <br><br>
-            </div>
+              <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
+              </button>
+              <a class="btn btn-success btn-sm" type="button" href="<?php echo base_url('pegawai/Hasil/Found/').$data_ibu[0]['NIK']."/#"?>">
+                <i class="fa fa-file-pdf-o">&nbsp Cetak Surat Rujukan</i>
+              </a>
+              </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
+      <br><br>
 
     <!-- tabel -->
     <div class="clearfix visible-sm-block"></div>
 
-    <section class="dentist-area section-padding-100-0">
-      <div class="container" style="margin-bottom:250px;">
-        <div class="row">
-          <!-- Section Heading -->
-          <div class="col-12">
-            <div class="section-heading text-center">
-              <h2>Riwayat Pemeriksaan Pasien</h2>
+    <div class="collapse" id="collapseExample">
+      <section class="dentist-area section-padding-100-0">
+        <div class="container" style="margin-bottom:250px;">
+          <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+              <div class="section-heading text-center">
+                <h2>Riwayat Pemeriksaan Pasien</h2>
 
-              <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+
+    <!-- ***** Dento Pricing Table Area Start ***** -->
+      <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+        <div style="height: 250px;" class="container">
+          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/Hasil/tambah_daftar_riwayat/'.$data_ibu[0]['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
+          <div class="row" >
+            <div class="col-12" >
+              <div class="dento-price-table table-responsive">
+                <table class="table table-borderless mb-0" >
+                  <thead>
+                    <tr>
+                      <th scope="col">Tanggal Periksa</th>
+                      <th scope="col">Keluhan Sekarang</th>
+                      <th scope="col">Obat</th>
+                      <th scope="col">Tekanan Darah</th>
+                      <th scope="col">Berat Badan</th>
+                      <th scope="col">Umur Kehamilan</th>
+                      <th scope="col">Dokter Periksa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <?php foreach ($riwayat as $riwayat): {
+                      // Date
+                      $date = $riwayat['Tanggal_periksa'];
+                      $newDate = date("d-m-Y", strtotime($date));
+                    }
+                    ?>
+                    <tr>
+                      <th><?php echo $newDate;?></th>
+
+
+                      <td>
+                        <?php
+                          if($riwayat['Keluhan_sekarang'] != NULL){
+                            echo $riwayat['Keluhan_sekarang'];
+                          } else{ ?>
+                            <a href="#" data-toggle="modal" data-target="#modal<?php echo $riwayat['id_periksa'];?>" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Tambahkan </i></a>
+                        <?php } ?>
+                      </td>
+
+                      <td><?php echo $riwayat['Obat'];?></td>
+                      <td><?php echo $riwayat['Tekanan_darah']. " mmhg";?></td>
+                      <td><?php echo $riwayat['Berat_badan']." Kg";?></td>
+                      <td><?php echo $riwayat['Umur_kehamilan']." Minggu";?></td>
+                      <td>
+                        <?php
+                        if($riwayat['dokter_periksa'] == 0){
+                          echo "";
+                        }else{
+                          echo $riwayat['dokter_periksa'];
+                        }?>
+                      </td>
+                    </tr>
+                  </tbody>
+                <?php endforeach;?>
+                </table>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-  <!-- ***** Dento Pricing Table Area Start ***** -->
-    <section class="dento-pricing-table-area mt-50 section-padding-0-100">
-      <div style="height: 250px;" class="container">
-        <a class="btn btn-secondary" href="<?php echo base_url('pegawai/Hasil/tambah_daftar_riwayat/'.$data_ibu[0]['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
-        <div class="row" >
-          <div class="col-12" >
-            <div class="dento-price-table table-responsive">
-              <table class="table table-borderless mb-0" >
-                <thead>
-                  <tr>
-                    <th scope="col">Tanggal Periksa</th>
-                    <th scope="col">Keluhan Sekarang</th>
-                    <th scope="col">Obat</th>
-                    <th scope="col">Tekanan Darah</th>
-                    <th scope="col">Berat Badan</th>
-                    <th scope="col">Umur Kehamilan</th>
-                    <th scope="col">Dokter Periksa</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  <?php foreach ($riwayat as $riwayat): {
-                    // Date
-                    $date = $riwayat['Tanggal_periksa'];
-                    $newDate = date("d-m-Y", strtotime($date));
-                  }
-                  ?>
-                  <tr>
-                    <th><?php echo $newDate;?></th>
-
-
-                    <td>
-                      <?php
-                        if($riwayat['Keluhan_sekarang'] != NULL){
-                          echo $riwayat['Keluhan_sekarang'];
-                        } else{ ?>
-                          <a href="#" data-toggle="modal" data-target="#modal<?php echo $riwayat['id_periksa'];?>" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Tambahkan </i></a>
-                      <?php } ?>
-                    </td>
-
-                    <td><?php echo $riwayat['Obat'];?></td>
-                    <td><?php echo $riwayat['Tekanan_darah']. " mmhg";?></td>
-                    <td><?php echo $riwayat['Berat_badan']." Kg";?></td>
-                    <td><?php echo $riwayat['Umur_kehamilan']." Minggu";?></td>
-                    <td>
-                      <?php
-                      if($riwayat['dokter_periksa'] == 0){
-                        echo "";
-                      }else{
-                        echo $riwayat['dokter_periksa'];
-                      }?>
-                    </td>
-                  </tr>
-                </tbody>
-              <?php endforeach;?>
-              </table>
-            </div>
-          </div>
-        </div>
+      <!-- ***** Dento Pricing Table Area End ***** -->
       </div>
-    </section>
-
-    <!-- ***** Dento Pricing Table Area End ***** -->
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
+</div>
 
     <?php foreach ($id_data as $id): ?>
 
