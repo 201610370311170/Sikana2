@@ -46,8 +46,23 @@ class Bayi extends CI_Controller {
 													'Tgl_lahir'			=> $Tanggal_lahir,
 													'NIK_Ibu'				=> $NIK_Ibu,
 				);
-				$this->model_bayi->register($datas);
-				redirect('/admin/bayi');
+
+				$query = $this->db->get_where('bayi', array('id_bayi' => $id_bayi));
+				$count = $query->num_rows();
+
+				if($count == 0){
+					$this->model_bayi->register($datas);
+					$this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
+					Data Berhasil ditambahkan
+					</div>');
+					redirect('/admin/bayi');
+				}
+				else{
+					$this->session->set_flashdata('danger', '<div class="alert alert-danger">
+						<strong>Maaf!</strong> No.Akta telah terdaftar.
+					</div>');
+					redirect('/admin/bayi');
+				}
 			}
 	}
 

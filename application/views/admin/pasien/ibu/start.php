@@ -19,6 +19,7 @@ $this->load->view('template/sidebar');
 <section class="content" >
   <?php echo validation_errors();?>
   <?php echo $this->session->flashdata('success');?>
+  <?php echo $this->session->flashdata('danger');?>
   <div class="main" id="main">
     <div class="main" id="main">
       <div class="main" id="main">

@@ -40,7 +40,7 @@ class Ibu extends CI_Controller {
 	}
 
 	public function register(){
-			
+
 			$data_form = $this->input->POST(NULL,TRUE);
 			if($data_form){
 				$Nama 					= $data_form['Nama'];
@@ -57,11 +57,24 @@ class Ibu extends CI_Controller {
 													'Nomor_Telefon'	=> $Nomor_Telefon,
 
 				);
-				$this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
-          Data Berhasil ditambahkan
-        </div>');
-				$this->model_ibu->register($datas);
-				redirect('/admin/ibu');
+
+				$query = $this->db->get_where('ibu', array('NIK' => $NIK));
+				$count = $query->num_rows();
+
+				if($count == 0){
+					$this->model_ibu->register($datas);
+					$this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
+					Data Berhasil ditambahkan
+					</div>');
+					redirect('/admin/ibu');
+				}
+				else{
+					$this->session->set_flashdata('danger', '<div class="alert alert-danger">
+						<strong>Maaf!</strong> NIK telah terdaftar.
+					</div>');
+					redirect('/admin/ibu');
+				}
+
 			}
 	}
 

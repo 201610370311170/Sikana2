@@ -30,6 +30,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     public function register(){
 
   		$this->load->model('model_pegawai');
+
+
   		$data_form = $this->input->POST(NULL,TRUE);
   		if($data_form){
   			$NIP 					  = $data_form['NIP'];
@@ -45,16 +47,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   												'Jabatan'				=> $Jabatan,
   												'Alamat'				=> $Alamat
   			);
+        //Check if user already exist
+        $query = $this->db->get_where('pegawai', array('NIP' => $NIP));
+        $count = $query->num_rows();
 
-  			// print_r($datas);
-  			// die;
-        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
+        if($count == 0){
+          $this->model_pegawai->register($datas);
+          $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
           Data Berhasil ditambahkan
-        </div>');
-  			$this->model_pegawai->register($datas);
-  			redirect('/admin/pegawai');
+          </div>');
+          redirect('/admin/pegawai');
+        }
+        else{
+          $this->session->set_flashdata('danger', '<div class="alert alert-danger">
+            <strong>Maaf!</strong> NIP telah terdaftar.
+          </div>');
+          redirect('/admin/pegawai');
+        }
   		}
-  		$this->load->view('/admin/pegawai');
   	}
 
     public function edit($NIP){

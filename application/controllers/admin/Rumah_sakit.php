@@ -29,10 +29,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             'Alamat_RS'		=> $Alamat_RS,
 
           );
-          $this->model_rumahSakit->register($datas);
-          redirect('/admin/rumah_sakit');
+          $query = $this->db->get_where('rumah_sakit', array('id_rs' => $id_rs));
+          $count = $query->num_rows();
+
+          if($count == 0){
+            $this->model_rumahSakit->register($datas);
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">
+            Data Berhasil ditambahkan
+            </div>');
+            redirect('/admin/rumah_sakit');
           }
+          else{
+            $this->session->set_flashdata('danger', '<div class="alert alert-danger">
+              <strong>Maaf!</strong> Rumah Sakit telah terdaftar.
+            </div>');
+            redirect('/admin/rumah_sakit');
+          }
+        }
       }
+
 
       function edit($id_rs){
           $rs 			  = $this->model_rumahSakit->getData("where id_rs = '$id_rs'");
@@ -64,9 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
       }
 
-      public function remove(){
-        // echo $this->uri->segment(3);
-
+       function remove(){
         $id = $this->uri->segment(4);
         $this->model_rumahSakit->delete_data('rumah_sakit',$id);
         redirect('/admin/rumah_sakit');

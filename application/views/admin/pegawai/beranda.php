@@ -22,7 +22,7 @@ $this->load->view('template/sidebar');
 <!-- Main content -->
 <section class="content">
         <?php echo $this->session->flashdata('success');?>
-
+        <?php echo $this->session->flashdata('danger');?>
         <div class="main" id="main">
           <nav class="breadcrumb " style="background-color:white">
             <h5>
