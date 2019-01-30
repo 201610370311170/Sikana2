@@ -100,7 +100,7 @@
           <div class="col-12">
             <div class="section-heading text-center">
               <h2>Riwayat Pemeriksaan Pasien</h2>
-                
+
               <div class="line"></div>
             </div>
           </div>
@@ -109,6 +109,7 @@
   <!-- ***** Dento Pricing Table Area Start ***** -->
     <section class="dento-pricing-table-area mt-50 section-padding-0-100">
       <div style="height: 250px;" class="container">
+        <a class="btn btn-secondary" href="<?php echo base_url('pegawai/Hasil/tambah_daftar_riwayat/'.$data_ibu[0]['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
         <div class="row" >
           <div class="col-12" >
             <div class="dento-price-table table-responsive">

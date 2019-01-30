@@ -40,12 +40,11 @@ class Ibu extends CI_Controller {
 	}
 
 	public function register(){
-
+			
 			$data_form = $this->input->POST(NULL,TRUE);
 			if($data_form){
 				$Nama 					= $data_form['Nama'];
 				$NIK						= $data_form['NIK'];
-				$Umur						= $data_form['Umur'];
 				$Tanggal_lahir	= $data_form['Tanggal_lahir'];
 				$Alamat					= $data_form['Alamat'];
 				$Nomor_Telefon	= $data_form['Nomor_Telefon'];
