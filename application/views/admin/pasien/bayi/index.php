@@ -55,6 +55,8 @@ $this->load->view('template/sidebar');
                     </th>
                     <th class="th-sm">NIK Ibu
                     </th>
+                    <th class="th-sm">Kesehatan
+                    </th>
                     <th class="th-sm">
                     </th>
                   </tr>
@@ -87,6 +89,9 @@ $this->load->view('template/sidebar');
                       <td><?php echo $rec['Jenis_kelamin']?></td>
                       <td><?php echo $newDate?></td>
                       <td><?php echo $rec['NIK_Ibu']?></td>
+                      <td>
+                        <a href="<?php echo base_url('admin/bayi/kesehatan/').$rec['id_bayi'];?>" class="btn btn-light" ><i class="fa fa-book">&nbspLihat Kesehatan</i></a>
+                      </td>
                       <td>
                         <a href="<?php echo base_url().'admin/bayi/edit/'.$rec['id_bayi']?>" class="btn btn-success" ><i class="fa fa-edit"></i></a>
                         <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $rec['id_bayi']?>"><i class="fa fa-trash"></i></a>

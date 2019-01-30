@@ -49,7 +49,7 @@
               </div>
               <?php echo $this->session->flashdata('notfound')?>
               <!-- Form -->
-              <form action="<?php echo base_url('pegawai/periksa/search')?>" method="post" autocomplete="off">
+              <form action="<?php echo base_url('pegawai/menu_ibu/periksa/search')?>" method="post" autocomplete="off">
                 <div class="row">
                   <div class="col-lg-12 autocomplete">
                     <input type="number" id="myInput" name="NIK_Ibu" class="form-control mb-30" placeholder="NIK Ibu" required >

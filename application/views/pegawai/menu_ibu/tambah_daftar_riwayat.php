@@ -16,7 +16,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="<?php echo base_url('pegawai/dashboard');?>"><i class="fa fa-home"></i> Beranda</a></li>
-              <li class="breadcrumb-item"><a href="<?php echo base_url('pegawai/Hasil/Found/'.$data_ibu)?>">Periksa</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('pegawai/menu_ibu/Hasil/Found/'.$data_ibu)?>">Periksa</a></li>
               <li class="breadcrumb-item active" aria-current="page">Tambah Hasil Periksa</li>
             </ol>
           </nav>
@@ -37,7 +37,7 @@
               <div class="line"></div>
             </div>
 
-              <?php echo form_open('pegawai/Hasil/tambah_daftar');?>
+              <?php echo form_open('pegawai/menu_ibu/periksa/tambah_daftar');?>
               <div class="row">
                 <div class="col-12">
                   <label> <b>Tanggal</b><span style="color:red">&nbsp*<span> </label>
@@ -91,7 +91,6 @@
 
                 <div class="col-12">
                   <button type="submit" class="btn dento-btn">Simpan</button>
-                  <a href="rujukan.html"><button type="submit" class="btn dento-btn">Rujukan</button></a>
                 </div>
           </div>
         </di2v>

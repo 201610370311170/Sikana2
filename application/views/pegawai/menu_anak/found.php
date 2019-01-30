@@ -40,12 +40,12 @@
 
             //Age
             $today       = new DateTime();
-            $birthdate   = new DateTime($data_ibu[0]['Tgl_lahir']);
+            $birthdate   = new DateTime($data_anak[0]['Tgl_lahir']);
             $interval    = $today->diff($birthdate);
             $Umur = $interval->format('%y Tahun');
 
             // Date
-            $date = $data_ibu[0]['Tgl_lahir'];
+            $date = $data_anak[0]['Tgl_lahir'];
             $newDate = date("d-m-Y", strtotime($date));
 
 
@@ -56,12 +56,12 @@
               <p>
                 <span style="margin-right: 100px;">Nama </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Nama'];?>
+                <?php echo $data_anak[0]['Nama'];?>
               </p>
               <p>
                 <span style="margin-right: 117px;">NIK </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['NIK'];?>
+                <?php echo $data_anak[0]['id_bayi'];?>
               </p>
               <p>
                 <span style="margin-right: 46px;">Tanggal Lahir </span>
@@ -74,20 +74,30 @@
                 <?php echo $Umur;?>
               </p>
               <p>
-                <span style="margin-right: 92px;">Alamat </span>
+                <span style="margin-right: 82px;">Kategori </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Alamat'];?>
+                <?php
+                  if($Umur < 3)
+                    echo "Bayi";
+                  else
+                    echo "Anak - anak";
+                ?>
               </p>
               <p>
-                <span style="margin-right: 36px;">No.Handphone </span>
+                <span style="margin-right: 44px;">Jenis Kelamin </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Nomor_Telefon'];?>
+                <?php echo $data_anak[0]['Jenis_kelamin'];?>
+              </p>
+              <p>
+                <span style="margin-right: 89px;">NIK Ibu </span>
+                <span style="margin-right: 50px;">: </span>
+                <?php echo $data_anak[0]['NIK_Ibu'];?>
               </p>
               <br><br>
-              <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
               </button>
-              <a class="btn btn-success btn-sm" type="button" href="<?php echo base_url('pegawai/Hasil/Found/').$data_ibu[0]['NIK']."/#"?>">
+              <a class="btn btn-success btn-md" type="button" href="<?php echo base_url('pegawai/menu_ibu/periksa/found').$data_anak[0]['id_bayi']."/#"?>">
                 <i class="fa fa-file-pdf-o">&nbsp Cetak Surat Rujukan</i>
               </a>
               </div>
@@ -116,7 +126,7 @@
     <!-- ***** Dento Pricing Table Area Start ***** -->
       <section class="dento-pricing-table-area mt-50 section-padding-0-100">
         <div style="height: 250px;" class="container">
-          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/Hasil/tambah_daftar_riwayat/'.$data_ibu[0]['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
+          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_anak/periksa/tambah_daftar_riwayat/'.$data_anak[0]['id_bayi'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
           <div class="row" >
             <div class="col-12" >
               <div class="dento-price-table table-responsive">
@@ -128,7 +138,7 @@
                       <th scope="col">Obat</th>
                       <th scope="col">Tekanan Darah</th>
                       <th scope="col">Berat Badan</th>
-                      <th scope="col">Umur Kehamilan</th>
+                      <th scope="col">Tinggi Badan</th>
                       <th scope="col">Dokter Periksa</th>
                     </tr>
                   </thead>
@@ -136,7 +146,7 @@
 
                     <?php foreach ($riwayat as $riwayat): {
                       // Date
-                      $date = $riwayat['Tanggal_periksa'];
+                      $date = $riwayat['tanggal_periksa'];
                       $newDate = date("d-m-Y", strtotime($date));
                     }
                     ?>
@@ -146,17 +156,17 @@
 
                       <td>
                         <?php
-                          if($riwayat['Keluhan_sekarang'] != NULL){
-                            echo $riwayat['Keluhan_sekarang'];
+                          if($riwayat['keluhan_sekarang'] != NULL){
+                            echo $riwayat['keluhan_sekarang'];
                           } else{ ?>
                             <a href="#" data-toggle="modal" data-target="#modal<?php echo $riwayat['id_periksa'];?>" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Tambahkan </i></a>
                         <?php } ?>
                       </td>
 
-                      <td><?php echo $riwayat['Obat'];?></td>
-                      <td><?php echo $riwayat['Tekanan_darah']. " mmhg";?></td>
-                      <td><?php echo $riwayat['Berat_badan']." Kg";?></td>
-                      <td><?php echo $riwayat['Umur_kehamilan']." Minggu";?></td>
+                      <td><?php echo $riwayat['obat'];?></td>
+                      <td><?php echo $riwayat['tekanan_darah']. " mmhg";?></td>
+                      <td><?php echo $riwayat['berat_badan']." Kg";?></td>
+                      <td><?php echo $riwayat['tinggi_badan']." cm";?></td>
                       <td>
                         <?php
                         if($riwayat['dokter_periksa'] == 0){
@@ -189,7 +199,7 @@
       <div class="modal-dialog">
 
         <!-- Modal content-->
-        <form action="<?php echo base_url('pegawai/Hasil/update_riwayat/'.$data_ibu[0]['NIK'])?>" method="post">
+        <form action="<?php echo base_url('pegawai/menu_anak/periksa/update_riwayat/'.$data_anak[0]['id_bayi'])?>" method="post">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Tambahkan Data</h4>

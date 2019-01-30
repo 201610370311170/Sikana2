@@ -85,7 +85,8 @@
                   <?php } else {?>
 
                     <!-- if login -->
-                    <li><a href="<?php echo base_url('pegawai/periksa')?>">Periksa</a></li>
+                    <li><a href="<?php echo base_url('pegawai/menu_ibu/periksa')?>">Ibu</a></li>
+                    <li><a href="<?php echo base_url('pegawai/menu_anak/periksa')?>">Anak</a></li>
                     <li>
                     <a  href="#" role="text" id="dropdownMenuLink" data-toggle="dropdown">
                       <?php echo $pegawai['Nama'];?>

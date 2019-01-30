@@ -162,8 +162,6 @@ class Ibu extends CI_Controller {
 
 	function tambah_data_kesehatan($NIK){
 
-
-
 		$data_form = $this->input->POST(NULL,TRUE);
 		if($data_form){
 			$NIK_Ibu									= $data_form['NIK_Ibu'];

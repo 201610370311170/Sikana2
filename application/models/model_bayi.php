@@ -33,11 +33,25 @@
 
     }
 
+    function getAllData($where=""){
+      $data = $this->db->query("select * from bayi where id_bayi = ".$where);
+      return $data->result_array();
+    }
+
+    function getAllID($where=""){
+      $data = $this->db->query("select id_bayi from bayi");
+      return $data->result_array();
+    }
+
     function countData(){
       $count = $this->db->query("select count(*) from bayi");
       return $count->row();
     }
 
+    function getData_NIK_Ibu($id_bayi){
+      $data = $this->db->query("select NIK_Ibu from bayi where id_bayi = ".$id_bayi);
+      return $data->result_array();
+    }
 
   }
 ?>

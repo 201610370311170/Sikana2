@@ -8,6 +8,7 @@ class Bayi extends CI_Controller {
 		$this->load->model('model_ibu');
 		$this->load->model('model_pegawai');
 		$this->load->model('model_bayi');
+		$this->load->model('model_kesehatan_anak');
 		$this->load->helper('url');
 		$this->load->helper(array('form', 'url'));
 		// load form_validation library
@@ -97,10 +98,7 @@ class Bayi extends CI_Controller {
 			$data['bayi'] 			= $d_bayi;
 			$data['ibu']				= $ibu;
 
-			//
-			// $data['dataIbu'] 			= $dataIbu;
-			// $data['dataPegawai']	= $pegawai;
-			// print_r($pegawai);
+
 
 			$this->load->view('admin/pasien/bayi/v_edit',$data);
 	}
@@ -128,6 +126,107 @@ class Bayi extends CI_Controller {
 				}
 
 	}
+
+
+		function kesehatan(){
+			$id_bayi = $this->uri->segment(4);
+			$data['data'] 							= $this->model_bayi->getAllData($id_bayi);
+			$data['riwayat'] 						= $this->model_kesehatan_anak->getAllData($id_bayi);
+			$data['riwayat_kesehatan'] 	= $this->model_kesehatan_anak->getAllData($id_bayi);
+
+
+
+			$this->load->view('admin/pasien/bayi/kesehatan_anak',$data);
+		}
+
+
+		function tambah_data_kesehatan($id_bayi){
+
+			$data_form = $this->input->POST(NULL,TRUE);
+			if($data_form){
+				$id_bayi									= $data_form['id_bayi'];
+				$tanggal_periksa					= $data_form['tanggal_periksa'];
+				$tekanan_darah						= $data_form['tekanan_darah'];
+				$berat_badan	  					= $data_form['berat_badan'];
+				$tinggi_badan 						= $data_form['tinggi_badan'];
+				$datas					= array(
+													'id_bayi'									=> $id_bayi,
+													'tanggal_periksa' 				=> $tanggal_periksa,
+													'tekanan_darah'						=> $tekanan_darah,
+													'berat_badan'							=> $berat_badan,
+													'tinggi_badan'						=> $tinggi_badan,
+
+				);
+				$this->model_kesehatan_anak->register($datas);
+				redirect('/admin/bayi/kesehatan/'.$id_bayi);
+			}
+		}
+
+
+			function hapus_data_kesehatan(){
+					$id_bayi			= $this->uri->segment(4);
+					$id_periksa 	= $this->uri->segment(5);
+					$this->model_kesehatan_anak->delete_data('kesehatan_anak',$id_periksa);
+					redirect('/admin/bayi/kesehatan/'.$id_bayi);
+
+			}
+
+
+			function edit_data_kesehatan(){
+
+
+					$id_periksa = $this->uri->segment(5);
+					$kesehatan_anak	= $this->model_kesehatan_anak->getRiwayatData($id_periksa);
+
+
+
+						$data_anak = array(
+							'id_bayi'									=> $kesehatan_anak[0]['id_bayi'],
+							'tanggal_periksa'					=> $kesehatan_anak[0]['tanggal_periksa'],
+							'id_periksa'							=> $kesehatan_anak[0]['id_periksa'],
+							'tekanan_darah'						=> $kesehatan_anak[0]['tekanan_darah'],
+							'berat_badan'							=> $kesehatan_anak[0]['berat_badan'],
+							'tinggi_badan'						=> $kesehatan_anak[0]['tinggi_badan'],
+
+							);
+
+
+
+						$this->load->view('admin/pasien/bayi/edit_data_kesehatan',$data_anak);
+			}
+
+
+				function update_data_kesehatan(){
+
+
+							$id_bayi									= $this->input->post('id_bayi');
+							$tanggal_periksa					= $this->input->post('tanggal_periksa');
+							$id_periksa								= $this->input->post('id_periksa');
+							$tekanan_darah						=	$this->input->post('tekanan_darah');
+							$berat_badan	  					= $this->input->post('berat_badan');
+							$tinggi_badan							= $this->input->post('tinggi_badan');
+
+
+
+							$data	= array(
+								'id_bayi'									=> $id_bayi,
+								'tanggal_periksa' 				=> $tanggal_periksa,
+								'tekanan_darah'						=> $tekanan_darah,
+								'berat_badan'							=> $berat_badan,
+								'tinggi_badan'						=> $tinggi_badan,
+							);
+							$where = array('id_periksa' => $id_periksa);
+							$id = $this->uri->segment(5);
+
+
+							$res = $this->model_kesehatan_anak->update_data('kesehatan_anak',$data,'id_periksa = '.$id);
+							if($res>=1){
+								$id_bayi	= $this->uri->segment(4);
+								redirect('/admin/bayi/kesehatan/'.$id_bayi);
+							}
+
+				}
+
 
 
 
