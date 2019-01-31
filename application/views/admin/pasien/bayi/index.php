@@ -141,7 +141,7 @@ $this->load->view('template/sidebar');
               </div>
               <div class="modal-body">
                     <label>NIK Ibu</label>
-                    <select name="NIK_Ibu" style="width:100%; height:30px; padding:2px 10px;" required>
+                    <select name="NIK_Ibu" required>
                       <option value="" style="width:100%; height:50px; ">--NIK Ibu--</option>
 
                       <?php foreach ($ibu as $ibu) {?>

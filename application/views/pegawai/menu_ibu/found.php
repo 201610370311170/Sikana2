@@ -87,9 +87,8 @@
               <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
               </button>
-              <a class="btn btn-success btn-md" type="button" href="<?php echo base_url('pegawai/Hasil/Found/').$data_ibu[0]['NIK']."/#"?>">
-                <i class="fa fa-file-pdf-o">&nbsp Cetak Surat Rujukan</i>
-              </a>
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
+            
               </div>
           </div>
         </div>
@@ -184,7 +183,7 @@
 
     <?php foreach ($id_data as $id): ?>
 
-    <!-- modal  -->
+    <!-- modal tambah -->
     <div class="modal fade" id="modal<?php echo $id['id_periksa'] ?>" role="dialog">
       <div class="modal-dialog">
 
@@ -214,6 +213,57 @@
       </div>
   </div>
   <?php endforeach; ?>
+
+
+  <!-- modal rujukan -->
+
+      <?php foreach ($id_data as $id): ?>
+
+      <!-- modal tambah -->
+      <div class="modal fade" id="modalRujukan" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <form action="<?php echo base_url('pegawai/menu_ibu/periksa/cetak/'.$data_ibu[0]['NIK'])?>" method="post">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Tambahkan Data</h4>
+              </div>
+                <div class="modal-body">
+                      <label>Keluhan</label>
+                      <textarea type="text" class="form-control" value="" required name="Keluhan_sekarang"></textarea>
+                </div>
+                <div class="modal-body">
+                      <label>Diagnosa</label>
+                      <input type="hidden" class="form-control" value="<?php echo $id['id_periksa']?>" name="id_periksa" required ></input>
+                      <input type="text" class="form-control" value="" name="diagnosa" required ></input>
+
+                <div class="modal-body">
+                      <label>Rumah Sakit</label>
+                      <select name="Rumah_sakit" style="width:100%; height:30px; padding:2px 10px;" required>
+                        <option value="" style="width:100%; height:50px; ">--Pilih Lokasi--</option>
+
+                        <?php foreach ($rumah_sakit as $rumah_sakit) {?>
+                          <option value="<?php echo $rumah_sakit['id_rs']?>">
+                            <?php echo $rumah_sakit['id_rs']?>
+
+                            <?php echo $rumah_sakit['Nama_RS']?>
+                          </option>
+
+                        <?php }?>
+                      </select>
+                </div>
+
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-primary" value="Submit" style="width:100px;"></input>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+              </div>
+          </form>
+        </div>
+    </div>
+    <?php endforeach; ?>
 
 
 

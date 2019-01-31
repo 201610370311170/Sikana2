@@ -6,6 +6,7 @@
 
       $this->load->model('model_ibu');
       $this->load->model('model_kesehatan_ibu');
+      $this->load->model('model_rumahSakit');
       if( !$this->session->userdata('pegawai'))
 				redirect('pegawai');
     }
@@ -36,9 +37,10 @@
     function found($NIK){
       $NIK = $this->uri->segment(5);
 
-      $data['data_ibu'] = $this->model_ibu->getAllData($NIK);
-      $data['riwayat']  = $this->model_kesehatan_ibu->getAllData($NIK);
-      $data['id_data']  = $this->model_kesehatan_ibu->getID_Data();
+      $data['data_ibu']     = $this->model_ibu->getAllData($NIK);
+      $data['riwayat']      = $this->model_kesehatan_ibu->getAllData($NIK);
+      $data['id_data']      = $this->model_kesehatan_ibu->getID_Data();
+      $data['rumah_sakit']  = $this->model_rumahSakit->getData();
 
       $this->load->view('pegawai/include/header');
       $this->load->view('pegawai/menu_ibu/found',$data);
@@ -103,12 +105,35 @@
 
       $res = $this->model_kesehatan_ibu->update_data('kesehatan_ibu',$data,$where);
       if($res>=1){
-        // $this->session->set_flashdata('berhasil', '<div class="alert alert-success" role="alert">
-        //   <b>Data Berhasil</b> ditambahkan
-        // </div>');
+
         redirect('pegawai/menu_ibu/periksa/found/'.$NIK);
       }
     }
+
+    function cetak(){
+
+      $NIK_Ibu = $this->uri->segment(5);
+      // $data_ibu = $this->model_ibu->getAllData($NIK_Ibu);
+
+      $Keluhan_sekarang = $this->input->post('Keluhan_sekarang');
+      $diagnosa         = $this->input->post('diagnosa');
+      $Rumah_sakit      = $this->input->post('Rumah_sakit');
+      $NIK_Ibu          = $this->model_ibu->getAllData($NIK_Ibu);
+
+
+      $data	= array(
+          'NIK_Ibu'               => $NIK_Ibu,
+          'Keluhan_sekarang' 		  => $Keluhan_sekarang,
+          'diagnosa'	            => $diagnosa,
+          'Rumah_sakit'           => $Rumah_sakit,
+      );
+
+      
+      $this->load->view('pegawai/menu_ibu/surat_rujukan',$data);
+
+    }
+
+
   }
 
 

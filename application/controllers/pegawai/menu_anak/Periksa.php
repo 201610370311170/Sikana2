@@ -7,6 +7,7 @@
       $this->load->model('model_ibu');
       $this->load->model('model_bayi');
       $this->load->model('model_kesehatan_anak');
+      $this->load->model('model_rumahSakit');
       if( !$this->session->userdata('pegawai'))
 				redirect('pegawai');
     }
@@ -36,10 +37,10 @@
     function found($data_anak){
       $data_anak = $this->uri->segment(5);
 
-      $data['data_anak'] = $this->model_bayi->getAllData($data_anak);
-      $data['riwayat']   = $this->model_kesehatan_anak->getAllData($data_anak);
-      $data['id_data']   = $this->model_kesehatan_anak->getID_Data();
-
+      $data['data_anak']    = $this->model_bayi->getAllData($data_anak);
+      $data['riwayat']      = $this->model_kesehatan_anak->getAllData($data_anak);
+      $data['id_data']      = $this->model_kesehatan_anak->getID_Data();
+      $data['rumah_sakit']  = $this->model_rumahSakit->getData();
 
       $this->load->view('pegawai/include/header');
       $this->load->view('pegawai/menu_anak/found',$data);
@@ -111,6 +112,33 @@
         redirect('pegawai/menu_anak/periksa/found/'.$id_bayi);
       }
     }
+
+    function cetak(){
+
+      $id_bayi = $this->uri->segment(5);
+      // $data_ibu = $this->model_ibu->getAllData($NIK_Ibu);
+
+      $Keluhan_sekarang = $this->input->post('Keluhan_sekarang');
+      $diagnosa         = $this->input->post('diagnosa');
+      $Rumah_sakit      = $this->input->post('Rumah_sakit');
+      $id_bayi          = $this->model_bayi->getAllData($id_bayi);
+
+
+      $data	= array(
+          'id_bayi'               => $id_bayi,
+          'Keluhan_sekarang' 		  => $Keluhan_sekarang,
+          'diagnosa'	            => $diagnosa,
+          'Rumah_sakit'           => $Rumah_sakit,
+      );
+
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
+
+      $this->load->view('pegawai/menu_anak/surat_rujukan',$data);
+
+    }
+
 
   }
 
