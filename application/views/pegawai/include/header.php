@@ -81,19 +81,25 @@
                   <!-- if not login -->
                   <?php if(!$this->session->userdata('pegawai')){?>
                     <li><a href="<?php echo base_url('sikana/tutorial')?>">Tutorial</a></li>
-                    <li><a href="<?php echo base_url('login')?>">Login</a></li>
+                    <li><a href="<?php echo base_url('login')?>">Masuk</a></li>
                   <?php } else {?>
 
                     <!-- if login -->
-                    <li><a href="<?php echo base_url('pegawai/menu_ibu/periksa')?>">Ibu</a></li>
-                    <li><a href="<?php echo base_url('pegawai/menu_anak/periksa')?>">Anak</a></li>
+                    <!-- <li><a href="<?php echo base_url('#')?>">Daftar</a></li> -->
+                    <li><a href="<?php echo base_url('pegawai/Daftar')?>">Daftar</a></li>
+                    <li><a href="<?php echo base_url('pegawai/Cari')?>">Cari</a></li>
+
+                    <!-- <li><a href="<?php echo base_url('pegawai/menu_ibu/periksa')?>">Ibu</a></li>
+                    <li><a href="<?php echo base_url('pegawai/menu_anak/periksa')?>">Anak</a></li> -->
+
                     <li>
                     <a  href="#" role="text" id="dropdownMenuLink" data-toggle="dropdown">
                       <?php echo $pegawai['Nama'];?>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="<?php echo site_url('Logout')?>">Logout</a>
+                        <a class="dropdown-item" href="<?php echo site_url('pegawai/Change_Password')?>">Ganti kata sandi</a>
+                        <a class="dropdown-item" href="<?php echo site_url('Logout')?>">Keluar</a>
                     </a>
-                  </li>
+                    </li>
                   <?php }?>
 
 

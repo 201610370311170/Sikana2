@@ -19,8 +19,9 @@
           <div class="col-12">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="masuk.html"><i class="fa fa-home"></i> Beranda</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Periksa</li>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('#');?>"><i class="fa fa-home"></i> Beranda</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('pegawai/cari');?>">Cari</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data Pasien</li>
               </ol>
             </nav>
           </div>
@@ -88,7 +89,7 @@
                 <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
               </button>
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
-            
+
               </div>
           </div>
         </div>
@@ -113,27 +114,27 @@
           </div>
 
     <!-- ***** Dento Pricing Table Area Start ***** -->
-      <section class="dento-pricing-table-area mt-50 section-padding-0-100">
-        <div style="height: 250px;" class="container">
+      <section class="dento-pricing-table-area mt-50 section-padding-0-100" >
+        <div style="margin-bottom:100px; max-height: 250px;" class="container">
           <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_ibu/periksa/tambah_daftar_riwayat/'.$data_ibu[0]['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
-          <div class="row" >
-            <div class="col-12" >
+          <div class="row">
+            <div class="col-12" style="overflow-y: scroll; height: 500px">
               <div class="dento-price-table table-responsive">
-                <table class="table table-borderless mb-0" >
+                <table class="table table-borderless mb-0" style="">
                   <thead>
                     <tr>
                       <th scope="col">Tanggal Periksa</th>
                       <th scope="col">Keluhan Sekarang</th>
                       <th scope="col">Obat</th>
-                      <th scope="col">Tekanan Darah</th>
-                      <th scope="col">Berat Badan</th>
-                      <th scope="col">Umur Kehamilan</th>
                       <th scope="col">Dokter Periksa</th>
+                      <th scope="col">Detail</th>
                     </tr>
                   </thead>
                   <tbody>
 
                     <?php foreach ($riwayat as $riwayat): {
+
+
                       // Date
                       $date = $riwayat['Tanggal_periksa'];
                       $newDate = date("d-m-Y", strtotime($date));
@@ -153,9 +154,6 @@
                       </td>
 
                       <td><?php echo $riwayat['Obat'];?></td>
-                      <td><?php echo $riwayat['Tekanan_darah']. " mmhg";?></td>
-                      <td><?php echo $riwayat['Berat_badan']." Kg";?></td>
-                      <td><?php echo $riwayat['Umur_kehamilan']." Minggu";?></td>
                       <td>
                         <?php
                         if($riwayat['dokter_periksa'] == 0){
@@ -164,6 +162,7 @@
                           echo $riwayat['dokter_periksa'];
                         }?>
                       </td>
+                      <td><a href="<?php echo base_url('pegawai/menu_ibu/Periksa/view_details/').$riwayat['id_periksa']?>">Lihat Detail</td>
                     </tr>
                   </tbody>
                 <?php endforeach;?>
@@ -227,7 +226,7 @@
           <form action="<?php echo base_url('pegawai/menu_ibu/periksa/cetak/'.$data_ibu[0]['NIK'])?>" method="post">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title">Tambahkan Data</h4>
+                <h4 class="modal-title">Buat Surat Rujukan Rumah Sakit</h4>
               </div>
                 <div class="modal-body">
                       <label>Keluhan</label>

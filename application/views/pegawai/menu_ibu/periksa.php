@@ -53,6 +53,7 @@
                 <div class="row">
                   <div class="col-lg-12 autocomplete">
                     <input type="number" id="myInput" name="NIK_Ibu" class="form-control mb-30" placeholder="NIK Ibu" required >
+                    <p>Belum terdaftar? <a href="#"><b>Daftar Sekarang<b></a></p>
                   </div>
                   <div class="col-12">
                     <button type="submit" class="btn dento-btn">Cari</button>

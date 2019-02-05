@@ -33,25 +33,26 @@
 
   	}
 
-    public function getSingleData($where=""){
+    function getSingleData($where=""){
       $data = $this->db->query("select * from kesehatan_ibu ".$where);
       return $data->result_array();
     }
 
-    public function getAllData($where=""){
+    function getAllData($where=""){
       $data = $this->db->query("select * from kesehatan_ibu where NIK_Ibu = ".$where);
       return $data->result_array();
     }
 
-    public function getRiwayatData($where=""){
+    function getRiwayatData($where=""){
       $data = $this->db->query("select * from kesehatan_ibu where id_periksa = ".$where);
       return $data->result_array();
     }
 
-    public function getID_Data(){
+    function getID_Data(){
       $data = $this->db->query("select id_periksa from kesehatan_ibu");
       return $data->result_array();
     }
+
 
   }
 ?>

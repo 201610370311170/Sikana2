@@ -53,7 +53,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<input type="submit" value="login" class="login100-form-btn">
+						<input type="submit" value="Masuk" class="login100-form-btn">
 
 						</input>
 					</div>

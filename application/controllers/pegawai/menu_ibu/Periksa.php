@@ -7,6 +7,7 @@
       $this->load->model('model_ibu');
       $this->load->model('model_kesehatan_ibu');
       $this->load->model('model_rumahSakit');
+      $this->load->model('model_pegawai');
       if( !$this->session->userdata('pegawai'))
 				redirect('pegawai');
     }
@@ -18,20 +19,8 @@
       $this->load->view('pegawai/include/footer');
     }
 
-    function search(){
-      $data_ibu   = $this->input->post('NIK_Ibu');
-      $data       = $this->model_ibu->getAllData($data_ibu);
-
-      if($this->db->get_where('ibu', array('NIK' => $this->input->post('NIK_Ibu', true)))->num_rows() > 0)
-      {
-        redirect('/pegawai/menu_ibu/periksa/found/'.$data_ibu);
-      }
-      else{
-        $this->session->set_flashdata('notfound','<div class="alert alert-danger" role="alert">
-            <b>Maaf</b>, Data tidak ditemukan
-          </div>');
-        redirect('/pegawai/menu_ibu/periksa');
-      }
+    function register(){
+      echo "Ini halaman register";
     }
 
     function found($NIK){
@@ -112,24 +101,40 @@
 
     function cetak(){
 
-      $NIK_Ibu = $this->uri->segment(5);
-      // $data_ibu = $this->model_ibu->getAllData($NIK_Ibu);
 
-      $Keluhan_sekarang = $this->input->post('Keluhan_sekarang');
-      $diagnosa         = $this->input->post('diagnosa');
-      $Rumah_sakit      = $this->input->post('Rumah_sakit');
-      $NIK_Ibu          = $this->model_ibu->getAllData($NIK_Ibu);
+      $NIK_Ibu = $this->uri->segment(5);
+
+
+      $Keluhan_sekarang   = $this->input->post('Keluhan_sekarang');
+      $diagnosa           = $this->input->post('diagnosa');
+      $Rumah_sakit        = $this->input->post('Rumah_sakit');
+      $NIK_Ibu            = $this->model_ibu->getAllData($NIK_Ibu);
+      $NameRS             = $this->model_rumahSakit->getNameRS($Rumah_sakit);
 
 
       $data	= array(
           'NIK_Ibu'               => $NIK_Ibu,
           'Keluhan_sekarang' 		  => $Keluhan_sekarang,
           'diagnosa'	            => $diagnosa,
-          'Rumah_sakit'           => $Rumah_sakit,
+          'Rumah_sakit'           => $NameRS,
       );
 
-      
+
       $this->load->view('pegawai/menu_ibu/surat_rujukan',$data);
+
+    }
+
+    function view_details($id){
+
+      $data['riwayat']                    = $this->model_kesehatan_ibu->getRiwayatData($id);
+      $data['data_dokter']                = $this->model_pegawai->getDataName($data['riwayat'][0]['dokter_periksa']);
+      $data['Nama_dokter']                = $data['data_dokter'][0]['Nama'];
+
+
+      $this->load->view('pegawai/include/header');
+      $this->load->view('pegawai/menu_ibu/detail_riwayat',$data);
+      $this->load->view('pegawai/include/footer');
+
 
     }
 

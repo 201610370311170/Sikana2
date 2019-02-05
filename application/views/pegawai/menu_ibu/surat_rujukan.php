@@ -25,19 +25,22 @@
           margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
       }
       </style>
-      <div id="printableTable" style="border: solid 1px black; width:700px; margin-left:400px; padding-bottom:150px;" >
+      <div id="printableTable" style="border: solid 1px black; width:700px; margin-left:400px; padding-bottom:80px;" >
         <body bgcolor="white">
 
 
       <div>
         <h2 align="center"> SURAT RUJUKAN </h2>
+        <p style="color: black; margin-left: 10px;">
+          <br><br>
+          Dengan Hormat <br>
+          Mohon pemeriksaan dan pengobatan lebih lanjut terhadap pasien:
+        </p>
         <table style="margin-left: 30px;">
         <tr>
         <td valign="top">NIK Pasien</td>
         <td valign="top">:&nbsp;&nbsp;</td>
-        <td>  <?php echo $NIK_Ibu[0]['NIK'];  ?></td>
-
-
+        <td valign="top"><?php echo $NIK_Ibu[0]['NIK'];  ?></td>
         </tr>
         <tr>
         <td valign="top">Nama</td>
@@ -67,7 +70,7 @@
         <tr>
         <td valign="top">Rumah Sakit</td>
         <td valign="top">:</td>
-        <td valign="top"><?php echo $Rumah_sakit; ?></td>
+        <td valign="top"><?php echo $Rumah_sakit[0]['Nama_RS']; ?></td>
         </tr>
         <tr>
         <td valign="top">Tanggal</td>
@@ -75,8 +78,9 @@
         <td valign="top"><?php echo "" . date("d-m-Y") . "<br>";?></td>
         </tr>
       </table>
+      <br>
       <p style="color:black; margin-left:10px;">atas ketersidaanya saya ucapkan terimakasih</p>
-      <br><br><br>
+      <br><br><br>1
       <div>
       <p style="color:black; text-align: right; margin-right: 20px;">
         ..............,<?php echo "" . date("d-m-Y") . "<br>";?>

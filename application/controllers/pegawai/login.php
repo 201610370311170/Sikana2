@@ -31,7 +31,7 @@
           'Alamat' 				=> $data[0]['Alamat'],
           'Jabatan'       => $data[0]['Jabatan']
         );
-        
+
         $this->session->set_userdata('pegawai',$dataPegawai);
         redirect('pegawai/dashboard');
       }
@@ -41,11 +41,6 @@
 
     }
 
-    function logout(){
-      $this->session->unset_userdata('pegawai');
-      $this->session->sess_destroy();
-      redirect('pegawai');
-    }
 
 
   }

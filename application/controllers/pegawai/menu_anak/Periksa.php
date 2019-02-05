@@ -54,7 +54,7 @@
       $data['NIK_Ibu'] = $this->model_bayi->getData_NIK_Ibu($id_bayi);
 
 
-      print_r($data);
+  
       $this->load->view('pegawai/include/header');
       $this->load->view('pegawai/menu_anak/tambah_daftar_riwayat',$data);
       $this->load->view('pegawai/include/footer');
@@ -130,10 +130,6 @@
           'diagnosa'	            => $diagnosa,
           'Rumah_sakit'           => $Rumah_sakit,
       );
-
-      echo "<pre>";
-      print_r($data);
-      echo "</pre>";
 
       $this->load->view('pegawai/menu_anak/surat_rujukan',$data);
 

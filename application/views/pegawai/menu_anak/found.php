@@ -19,8 +19,9 @@
           <div class="col-12">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="masuk.html"><i class="fa fa-home"></i> Beranda</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Periksa</li>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('#')?>"><i class="fa fa-home"></i> Beranda</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('pegawai/cari');?>">Cari</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data Pasien</li>
               </ol>
             </nav>
           </div>

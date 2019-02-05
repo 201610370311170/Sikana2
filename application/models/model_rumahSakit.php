@@ -28,6 +28,11 @@
       return $count->row();
     }
 
+    function getNameRS($id_RS){
+      $data = $this->db->query("select Nama_RS from rumah_sakit where id_rs = ".$id_RS);
+      return $data->result_array();
+    }
+
 
   }
 
