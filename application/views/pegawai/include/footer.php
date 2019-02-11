@@ -1,6 +1,6 @@
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(assets/img/bg-img/homeeee.jpg);display: block;">
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(<?=site_url('assets/images/4.jpg')?>);">
     <!-- Copywrite Area -->
     <div class="container">
         <div class="col-12">

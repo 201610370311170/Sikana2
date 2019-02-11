@@ -33,7 +33,7 @@
           <div class="contact-form">
             <!-- Section Heading -->
             <div class="section-heading">
-              <h2>Tambah Data Pasien</h2>
+        
               <?php echo $this->session->flashdata('danger');?>
               <div class="line"></div>
             </div>
@@ -58,6 +58,14 @@
                     <option value="">--Pilih Jenis Kelamin--</option>
                     <option value="Laki-Laki">Laki-Laki</option>
                     <option value="Perempuan">Perempuan</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label> <b>Jenis_kelamin</b><span style="color:red">&nbsp*<span> </label>
+                  <select class="form-control mb-30" name="Kategori_pasien" required>
+                    <option value="">--Pilih Kategori--</option>
+                    <option value="BPJS">BPJS</option>
+                    <option value="Umum">Umum</option>
                   </select>
                 </div>
                 <div class="col-12">

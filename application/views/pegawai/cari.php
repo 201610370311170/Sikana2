@@ -4,11 +4,11 @@
 
   <section class="content">
 
-    <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
+    <div class="breadcumb-area bg-img bg-gradient-overlay">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
           <div class="col-12">
-            <h2 class="title">Periksa</h2>
+            <h2 class="title">Cari Data</h2>
           </div>
         </div>
       </div>
@@ -19,8 +19,8 @@
           <div class="col-12">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="masuk.html"><i class="fa fa-home"></i> Beranda</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Periksa</li>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('#')?>"><i class="fa fa-home"></i> Beranda</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cari</li>
               </ol>
             </nav>
           </div>

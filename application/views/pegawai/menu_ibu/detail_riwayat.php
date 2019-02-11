@@ -45,65 +45,74 @@
 
             ?>
 
+            <div class="form-inline">
 
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">NIK Ibu:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['NIK_Ibu']?>"   readonly>
+                </div>
 
-              <div class="row">
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>NIK</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['NIK_Ibu']?>" readonly>
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Tekanan Darah:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['Tekanan_darah']." mmHg"?>" readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Tekanan Darah</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Tekanan_darah']." mmHg"?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Berat Badan:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['Berat_badan']." Kg"?>" readonly>
                 </div>
-                <!-- <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Nama</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Nama']?>"   readonly>
-                </div> -->
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Berat Badan</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Berat_badan']." Kg"?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Tanggal Periksa:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $newDate ?>" readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Tanggal Periksa</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $newDate ?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Tinggi Badan:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control" value="<?php echo $riwayat['Umur_kehamilan']. " Minggu"?>"  readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Tinggi Badan</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Tinggi_badan']." cm"?>"  readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Dokter Periksa:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $Nama_dokter?>"  readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Dokter Periksa</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $Nama_dokter?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Umur Kehamilan:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['Umur_kehamilan']. " Minggu"?>"   readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Umur Kehamilan</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Umur_kehamilan']. " Minggu"?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Tinggi Fundus:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['Tinggi_fundus']." cm"?>"  readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Tinggi Fundus</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Tinggi_fundus']." cm"?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Letak Janin:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"   value="<?php echo $riwayat['Letak_janin']?>" readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Letak Janin</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Letak_janin']?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Denyut Jantung Janin:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['Denyut_jantung_janin']." / menit"?>" readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Denyut Jantung Janin</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Denyut_jantung_janin']." / menit"?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Obat:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input type="text" class="form-control"  value="<?php echo $riwayat['Obat']?>"  readonly>
                 </div>
-                <div class="col-6" style="margin-bottom:30px;">
-                  <label><b>Obat</b></label>
-                  <input class="form-control form-control-lg" type="text" value="<?php echo $riwayat['Obat']?>" readonly>
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Keluhan Sekarang:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <textarea class="form-control" placeholder="<?php echo $riwayat['Keluhan_sekarang']?>" readonly></textarea>
                 </div>
-                <div class="col-12" style="margin-bottom:30px;">
-                  <label><b>Keluhan</b></label>
-                  <textarea class="form-control form-control-lg" type="text" placeholder="<?php echo $riwayat['Keluhan_sekarang']?>" readonly></textarea>
+
+                <div class="form-group">
+                  <div class="col-12" style="margin-bottom:30px;margin-left:530px; margin-top:30px;">
+                    <button class="btn dento-btn" onclick="window.history.back()">Kembali</button>
+                  </div>
                 </div>
-                <div class="col-12" style="margin-bottom:30px;">
-                  <button type="submit" class="btn dento-btn" onclick="window.history.back()">Kembali</button>
-                </div>
-              </div>
+            </div>
             <?php endforeach; ?>
 
 

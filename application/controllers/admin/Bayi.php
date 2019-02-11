@@ -39,12 +39,14 @@ class Bayi extends CI_Controller {
 				$Nama 					= $data_form['Nama'];
 				$Jenis_kelamin	= $data_form['Jenis_kelamin'];
 				$Tanggal_lahir	= $data_form['Tanggal_lahir'];
+				$Kategori_pasien= $data_form['Kategori_pasien'];
 				$NIK_Ibu				= $data_form['NIK_Ibu'];
 				$datas					= array(
 													'id_bayi' 			=> $id_bayi,
 													'Nama'					=> $Nama,
 													'Jenis_kelamin'	=> $Jenis_kelamin,
 													'Tgl_lahir'			=> $Tanggal_lahir,
+													'Kategori'			=> $Kategori_pasien,
 													'NIK_Ibu'				=> $NIK_Ibu,
 				);
 

@@ -43,18 +43,20 @@ class Ibu extends CI_Controller {
 
 			$data_form = $this->input->POST(NULL,TRUE);
 			if($data_form){
-				$Nama 					= $data_form['Nama'];
-				$NIK						= $data_form['NIK'];
-				$Tanggal_lahir	= $data_form['Tanggal_lahir'];
-				$Alamat					= $data_form['Alamat'];
-				$Nomor_Telefon	= $data_form['Nomor_Telefon'];
+				$Nama 						= $data_form['Nama'];
+				$NIK							= $data_form['NIK'];
+				$Tanggal_lahir		= $data_form['Tanggal_lahir'];
+				$Alamat						= $data_form['Alamat'];
+				$Nomor_Telefon		= $data_form['Nomor_Telefon'];
+				$Kategori_pasien	= $data_form['Kategori_pasien'];
 
 				$datas					= array(
-													'Nama' 					=> $Nama,
-													'NIK'						=> $NIK,
-													'Tgl_lahir'			=> $Tanggal_lahir,
-													'Alamat'				=> $Alamat,
-													'Nomor_Telefon'	=> $Nomor_Telefon,
+													'Nama' 						=> $Nama,
+													'NIK'							=> $NIK,
+													'Tgl_lahir'				=> $Tanggal_lahir,
+													'Alamat'					=> $Alamat,
+													'Nomor_Telefon'		=> $Nomor_Telefon,
+													'Kategori'			  => $Kategori_pasien,
 
 				);
 

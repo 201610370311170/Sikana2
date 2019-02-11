@@ -4,7 +4,7 @@
     <?php
       $pegawai = $this->session->userdata('pegawai');
     ?>
-    <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
+    <!-- <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
           <div class="col-12">
@@ -12,7 +12,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="breadcumb--con">
       <div class="container">
         <div class="row">
@@ -37,8 +37,8 @@
             <i class="fa fa-user"></i> &nbsp <span >Data Pasien</span>
           </h3>
 
-            <?php
 
+            <?php
             //Age
             $today       = new DateTime();
             $birthdate   = new DateTime($data_anak[0]['Tgl_lahir']);
@@ -90,9 +90,14 @@
                 <?php echo $data_anak[0]['Jenis_kelamin'];?>
               </p>
               <p>
+                <span style="margin-right: 33px;">Kategori Pasien </span>
+                <span style="margin-right: 50px;">: </span>
+                <?php echo $data_anak[0]['Kategori'];?>
+              </p>
+              <p>
                 <span style="margin-right: 89px;">NIK Ibu </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_anak[0]['NIK_Ibu'];?>
+                <a href="<?php echo base_url('pegawai/menu_ibu/periksa/found/'.$data_anak[0]['NIK_Ibu'])?>" style="color:#0033cc;  text-decoration: underline;"><?php echo $data_anak[0]['NIK_Ibu'];?></a>
               </p>
               <br><br>
               <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">

@@ -135,6 +135,14 @@ $this->load->view('template/sidebar');
                 <input type="text" class="form-control" value="" required name="Alamat" placeholder="Alamat Pasien" >
           </div>
           <div class="modal-body">
+                <label>Kategori Pasien</label>
+                <select class="form-control" name="Kategori_pasien" required>
+                  <option value="">--Pilih Kategori--</option>
+                  <option value="BPJS">BPJS</option>
+                  <option value="Umum">Umum</option>
+                </select>
+          </div>
+          <div class="modal-body">
                 <label>Nomor HP</label>
                 <input type="text" class="form-control" value="" maxlength="12" required  size=12 name="Nomor_Telefon" placeholder="No HP" >
           </div>

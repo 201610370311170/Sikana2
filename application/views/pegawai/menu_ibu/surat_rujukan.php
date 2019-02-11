@@ -1,3 +1,10 @@
+<?php
+echo "<pre>";
+print_r($NIK_Ibu);
+echo "</pre>";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,7 +13,10 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/style2.css')?>">
   </head>
   <body>
-    <style type="text/css" media="print">
+
+      <div id="printableTable" style="border: solid 1px black; width:700px; text-align: center; margin: 50px auto; padding-bottom:80px;" >
+        <body bgcolor="white">
+          <style type="text/css" media="print">
       @page
       {
           size:  auto;   /* auto is the initial value */
@@ -25,18 +35,21 @@
           margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
       }
       </style>
-      <div id="printableTable" style="border: solid 1px black; width:700px; margin-left:400px; padding-bottom:80px;" >
-        <body bgcolor="white">
-
-
-      <div>
-        <h2 align="center"> SURAT RUJUKAN </h2>
+      <div style="text-align: left;">
+        <h2 align="center"> <br>SURAT RUJUKAN </h2>
         <p style="color: black; margin-left: 10px;">
           <br><br>
+          Kepada Yth<br>
+          ..............................<br><br>
           Dengan Hormat <br>
           Mohon pemeriksaan dan pengobatan lebih lanjut terhadap pasien:
         </p>
         <table style="margin-left: 30px;">
+        <tr>
+        <td valign="top">Tanggal</td>
+        <td valign="top">:</td>
+        <td valign="top"><?php echo "" . date("d-m-Y") . "<br>";?></td>
+        </tr>
         <tr>
         <td valign="top">NIK Pasien</td>
         <td valign="top">:&nbsp;&nbsp;</td>
@@ -58,6 +71,7 @@
         <td valign="top"><?php echo $NIK_Ibu[0]['Nomor_Telefon']; ?></td>
         </tr>
         <tr>
+        <tr>
         <td valign="top">Keluhan</td>
         <td valign="top">:</td>
         <td valign="top"><?php echo $Keluhan_sekarang; ?></td>
@@ -68,24 +82,24 @@
         <td valign="top"><?php echo $diagnosa; ?></td>
         </tr>
         <tr>
-        <td valign="top">Rumah Sakit</td>
+        <td valign="top">Rumah Sakit&nbsp;&nbsp;</td>
         <td valign="top">:</td>
         <td valign="top"><?php echo $Rumah_sakit[0]['Nama_RS']; ?></td>
         </tr>
-        <tr>
-        <td valign="top">Tanggal</td>
+        <td valign="top">Kategori</td>
         <td valign="top">:</td>
-        <td valign="top"><?php echo "" . date("d-m-Y") . "<br>";?></td>
+        <td valign="top"><?php echo $NIK_Ibu[0]['Kategori']; ?></td>
         </tr>
+
       </table>
       <br>
-      <p style="color:black; margin-left:10px;">atas ketersidaanya saya ucapkan terimakasih</p>
-      <br><br><br>1
+      <p style="color:black; margin-left:10px;"> Demikian surat rujukan ini dibuat dan sangat diharapakan balasannya. Atas ketersediaanya saya ucapkan terimakasih</p>
+      <br><br><br>
       <div>
       <p style="color:black; text-align: right; margin-right: 20px;">
         ..............,<?php echo "" . date("d-m-Y") . "<br>";?>
         <br><br><br>
-        ......................................
+        .......................................
       </p>
     </div>
       </div>

@@ -129,7 +129,7 @@ $this->load->view('template/sidebar');
               </div>
               <div class="modal-body">
                 <label>Jenis Kelamin</label>
-                <select name="Jenis_kelamin" required style="width:100%; height:30px; padding:2px 10px;" >
+                <select name="Jenis_kelamin" class="form-control"  required style="width:100%; height:30px; padding:2px 10px;" >
                   <option value="" style="width:100%; height:50px; ">--Pilih Jenis Kelamin--</option>
                   <option value="Laki-laki">Laki Laki</option>
                   <option value="Perempuan">Perempuan</option>
@@ -140,8 +140,16 @@ $this->load->view('template/sidebar');
                     <input type="date" class="form-control" value="" required placeholder="Tanggal Lahir" name="Tanggal_lahir">
               </div>
               <div class="modal-body">
+                <label>Kategori Pasien</label>
+                <select name="Kategori_pasien" class="form-control"  required style="width:100%; height:30px; padding:2px 10px;" >
+                  <option value="" style="width:100%; height:50px; ">--Pilih Kategori Pasien--</option>
+                  <option value="BPJS">BPJS</option>
+                  <option value="Umum">Umum</option>
+                </select>
+              </div>
+              <div class="modal-body">
                     <label>NIK Ibu</label>
-                    <select name="NIK_Ibu" required>
+                    <select name="NIK_Ibu"  class="form-control" required>
                       <option value="" style="width:100%; height:50px; ">--NIK Ibu--</option>
 
                       <?php foreach ($ibu as $ibu) {?>
@@ -152,9 +160,6 @@ $this->load->view('template/sidebar');
                         </option>
 
                       <?php }?>
-
-
-
                     </select>
               </div>
             <div class="modal-footer">

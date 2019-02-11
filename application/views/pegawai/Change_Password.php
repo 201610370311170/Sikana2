@@ -24,7 +24,7 @@
           <div class="contact-form">
             <!-- Section Heading -->
             <div class="section-heading">
-              <h2>Ganti Password Akun</h2>
+              <h2>Ganti Kata Sandi</h2>
               <?php echo $this->session->flashdata('danger');?>
               <?php echo $this->session->flashdata('success');?>
               <div class="line"></div>

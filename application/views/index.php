@@ -8,15 +8,19 @@
         <!-- Welcome Slides -->
         <div class="welcome-slides owl-carousel">
           <!-- Single Welcome Slide -->
-          <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url(assets/img/bg-img/homeee.jpg);">
+          <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url(assets/images/5.jpg);">
             <div class="container h-100">
               <div class="row h-100 align-items-center">
                 <div class="col-12">
                   <!-- Welcome Text -->
                   <div class="welcome-text text-left">
                     <h2 data-animation="fadeInUp" data-delay="100ms">SIKANA</h2>
-                    <p data-animation="fadeInUp" data-delay="300ms">Sistem Informasi ibu dan anak untuk mempermudah pelayanan kesehatan. Hal ini dilatar belakangi karena masih menggunakan sistem manual seperti penggunaan kertas atau buku. Dalam SIKANA ini meminimalkan penggunaan kertas atau buku dan memudahkan pekerjaan menjadi efektif dan efisien.</p>
-                  </div>
+                    <p data-animation="fadeInUp" data-delay="300ms">
+                      Sistem Informasi ibu dan anak mempermudah pendataan pelayanan kesehatan ibu dan anak, serta pihak rumah sakit memiliki cadangan data
+                      riwayat perkembangan kesehatan pasien karena terkadang banyaknya kesalahan perekapan data yang diakibatkan oleh permasalahan pertama
+                      di atas mengakibatkan Petugas kesehatan kesulitan dalam merekam riwayat kesehatan dari ibu dan anaknya. Sehingga diharapkan dapat
+                      memberikan penanganan yang lebih efetif dan solutif nantinya.</p>
+                    </div>
                 </div>
               </div>
             </div>

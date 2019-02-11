@@ -49,7 +49,7 @@
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
+						<span class="label-input100">Kata Sandi</span>
 					</div>
 
 					<div class="container-login100-form-btn">
@@ -59,7 +59,7 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image:url('./assets/images/bg-04.jpg');">
+				<div class="login100-more" style="background-image:url('./assets/images/10.jpg');">
 				</div>
 			</div>
 		</div>

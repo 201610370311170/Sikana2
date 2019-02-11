@@ -4,15 +4,6 @@
     <?php
       $pegawai = $this->session->userdata('pegawai');
     ?>
-    <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
-      <div class="container h-100">
-        <div class="row h-100 align-items-center">
-          <div class="col-12">
-            <h2 class="title">Data Pasien</h2>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="breadcumb--con">
       <div class="container">
         <div class="row">
@@ -37,16 +28,17 @@
             <i class="fa fa-user"></i> &nbsp <span >Data Pasien</span>
           </h3>
 
-            <?php
+            <?php foreach ($data_ibu as $data_ibu) {
+
 
             //Age
             $today       = new DateTime();
-            $birthdate   = new DateTime($data_ibu[0]['Tgl_lahir']);
+            $birthdate   = new DateTime($data_ibu['Tgl_lahir']);
             $interval    = $today->diff($birthdate);
             $Umur = $interval->format('%y Tahun');
 
             // Date
-            $date = $data_ibu[0]['Tgl_lahir'];
+            $date = $data_ibu['Tgl_lahir'];
             $newDate = date("d-m-Y", strtotime($date));
 
 
@@ -57,12 +49,12 @@
               <p>
                 <span style="margin-right: 100px;">Nama </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Nama'];?>
+                <?php echo $data_ibu['Nama'];?>
               </p>
               <p>
                 <span style="margin-right: 117px;">NIK </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['NIK'];?>
+                <?php echo $data_ibu['NIK'];?>
               </p>
               <p>
                 <span style="margin-right: 46px;">Tanggal Lahir </span>
@@ -75,27 +67,32 @@
                 <?php echo $Umur;?>
               </p>
               <p>
+                <span style="margin-right: 32px;">Kategori Pasien </span>
+                <span style="margin-right: 50px;">: </span>
+                <?php echo $data_ibu['Kategori'];?>
+              </p>
+              <p>
                 <span style="margin-right: 92px;">Alamat </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Alamat'];?>
+                <?php echo $data_ibu['Alamat'];?>
               </p>
               <p>
                 <span style="margin-right: 36px;">No.Handphone </span>
                 <span style="margin-right: 50px;">: </span>
-                <?php echo $data_ibu[0]['Nomor_Telefon'];?>
+                <?php echo $data_ibu['Nomor_Telefon'];?>
               </p>
               <br><br>
-              <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-outline-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
               </button>
-                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
+                <a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
 
               </div>
           </div>
         </div>
       </div>
       <br><br>
-
+    <?php   }  ?>
     <!-- tabel -->
     <div class="clearfix visible-sm-block"></div>
 
@@ -116,7 +113,7 @@
     <!-- ***** Dento Pricing Table Area Start ***** -->
       <section class="dento-pricing-table-area mt-50 section-padding-0-100" >
         <div style="margin-bottom:100px; max-height: 250px;" class="container">
-          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_ibu/periksa/tambah_daftar_riwayat/'.$data_ibu[0]['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
+          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_ibu/periksa/tambah_daftar_riwayat/'.$data_ibu['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
           <div class="row">
             <div class="col-12" style="overflow-y: scroll; height: 500px">
               <div class="dento-price-table table-responsive">
@@ -134,6 +131,8 @@
 
                     <?php foreach ($riwayat as $riwayat): {
 
+                      //Konversi id menjadi Nama Dokter
+                      $data = $this->model_pegawai->getDataName($riwayat['dokter_periksa']);
 
                       // Date
                       $date = $riwayat['Tanggal_periksa'];
@@ -159,7 +158,7 @@
                         if($riwayat['dokter_periksa'] == 0){
                           echo "";
                         }else{
-                          echo $riwayat['dokter_periksa'];
+                          echo $data[0]['Nama'];
                         }?>
                       </td>
                       <td><a href="<?php echo base_url('pegawai/menu_ibu/Periksa/view_details/').$riwayat['id_periksa']?>">Lihat Detail</td>
@@ -187,7 +186,7 @@
       <div class="modal-dialog">
 
         <!-- Modal content-->
-        <form action="<?php echo base_url('pegawai/menu_ibu/periksa/update_riwayat/'.$data_ibu[0]['NIK'])?>" method="post">
+        <form action="<?php echo base_url('pegawai/menu_ibu/periksa/update_riwayat/'.$data_ibu['NIK'])?>" method="post">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Tambahkan Data</h4>
@@ -223,7 +222,7 @@
         <div class="modal-dialog">
 
           <!-- Modal content-->
-          <form action="<?php echo base_url('pegawai/menu_ibu/periksa/cetak/'.$data_ibu[0]['NIK'])?>" method="post">
+          <form action="<?php echo base_url('pegawai/menu_ibu/periksa/cetak/'.$data_ibu['NIK'])?>" method="post">
             <div class="modal-content">
               <div class="modal-header">
                 <h4 class="modal-title">Buat Surat Rujukan Rumah Sakit</h4>
@@ -239,14 +238,14 @@
 
                 <div class="modal-body">
                       <label>Rumah Sakit</label>
-                      <select name="Rumah_sakit" style="width:100%; height:30px; padding:2px 10px;" required>
+                      <select name="Rumah_sakit" class="form-control" style="width:100%; height:30px; padding:2px 20px;" required>
                         <option value="" style="width:100%; height:50px; ">--Pilih Lokasi--</option>
 
                         <?php foreach ($rumah_sakit as $rumah_sakit) {?>
                           <option value="<?php echo $rumah_sakit['id_rs']?>">
-                            <?php echo $rumah_sakit['id_rs']?>
+                            <?php echo $rumah_sakit['id_rs']."\t";?>
 
-                            <?php echo $rumah_sakit['Nama_RS']?>
+                            <?php echo $rumah_sakit['Nama_RS'];?>
                           </option>
 
                         <?php }?>

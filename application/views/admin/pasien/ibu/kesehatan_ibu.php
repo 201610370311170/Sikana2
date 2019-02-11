@@ -30,10 +30,27 @@ $this->load->view('template/sidebar');
     </nav>
   <div class="box" id="box">
     <div class="box-body" >
+
+
+        <!-- LABEL BPJS -->
+        <?php
+        $data1 = $data[0]['Kategori'];
+        $data2 = 'BPJS';
+
+          if (strcmp($data1, $data2) !== 0){?>
+              <h1 class="pull-right"><span class="label label-default">Umum</span></h1>
+          <?php }
+          else {?>
+              <h1 class="pull-right"><span class="label label-success">BPJS</span></h1>
+          <?php }
+          ?>
+
         <h3 style="margin-left: 50px;">
           <i class="fa fa-user"></i> &nbsp <span >Data Pasien</span>
         </h3>
+
         <?php foreach ($data as $data):
+
 
           //Age
           $today       = new DateTime();

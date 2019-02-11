@@ -7,6 +7,11 @@
       return $data->result_array();
     }
 
+    function getDataLatest(){
+        $data = $this->db->query("SELECT id_bayi,Nama,Kategori FROM bayi order by No_pasien DESC Limit 4");
+        return $data->result_array();
+    }
+
     function delete_data($table,$id){
       $this->db->where('id_bayi',$id);
       $this->db->delete($table);

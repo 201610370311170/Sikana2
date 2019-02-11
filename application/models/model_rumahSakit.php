@@ -24,7 +24,7 @@
     }
 
     function countData(){
-      $count = $this->db->query("select count(*) from ibu");
+      $count = $this->db->query("select count(*) from rumah_sakit");
       return $count->row();
     }
 

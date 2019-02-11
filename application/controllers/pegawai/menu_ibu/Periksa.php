@@ -31,6 +31,19 @@
       $data['id_data']      = $this->model_kesehatan_ibu->getID_Data();
       $data['rumah_sakit']  = $this->model_rumahSakit->getData();
 
+
+      //Get Nama Dokter
+      $riwayat      = $this->model_kesehatan_ibu->getAllData($NIK);
+
+        // 
+        // foreach ($riwayat as $riwayat) {
+        //   echo "<pre>";
+        //   print_r($this->model_pegawai->getDataName($riwayat['dokter_periksa']));
+        //   echo "</pre>";
+        // }
+
+
+
       $this->load->view('pegawai/include/header');
       $this->load->view('pegawai/menu_ibu/found',$data);
       $this->load->view('pegawai/include/footer');

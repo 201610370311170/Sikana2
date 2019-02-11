@@ -1,14 +1,13 @@
 
-  <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-          <h2 class="title">Tambah data pasien</h2>
-        </div>
+<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/homeee.jpg);">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <h2 class="title">Tambah data pasien</h2>
       </div>
     </div>
   </div>
+</div>
   <div class="breadcumb--con">
     <div class="container">
       <div class="row">
@@ -33,7 +32,7 @@
           <div class="contact-form">
             <!-- Section Heading -->
             <div class="section-heading">
-              <h2>Tambah Data Pasien</h2>
+  
               <?php echo $this->session->flashdata('danger');?>
               <div class="line"></div>
             </div>
@@ -55,6 +54,14 @@
                 <div class="col-12">
                   <label> <b>Alamat</b><span style="color:red">&nbsp*<span> </label>
                   <input type="text" name="Alamat" class="form-control mb-30" required  >
+                </div>
+                <div class="col-12">
+                  <label> <b>Kategori Pasien</b><span style="color:red">&nbsp*<span> </label>
+                  <select type="text" name="Kategori_pasien" class="form-control mb-30" required>
+                    <option class="form-control mb-30" value="">--Pilih Kategori--</option>
+                    <option class="form-control mb-30" value="BPJS">BPJS</option>
+                    <option class="form-control mb-30" value="Umum">Umum</option>
+                  </select>
                 </div>
                 <div class="col-12">
                   <label> <b>Nomor Telefon</b><span style="color:red">&nbsp*<span></label>

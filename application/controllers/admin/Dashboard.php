@@ -22,7 +22,9 @@ class Dashboard extends CI_Controller {
 		$data['jumlahDataPegawai'] 	= $this->model_pegawai->countData();
 		$data['jumlahDataRS'] 			= $this->model_rumahSakit->countData();
 
-
+		$data['dataIbu']						= $this->model_ibu->getDataLatest();
+		$data['dataAnak']						= $this->model_bayi->getDataLatest();
+	
 		$this->load->view('admin/dashboard',$data);
 	}
 

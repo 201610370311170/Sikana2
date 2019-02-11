@@ -4,8 +4,13 @@
 
 
     //GET ALL DATA IBU
-     function getData(){
+    function getData(){
       $data = $this->db->query("select * from ibu ");
+      return $data->result_array();
+    }
+
+    function getDataLatest(){
+      $data = $this->db->query("SELECT NIK,Nama,Kategori FROM Ibu order by No_pasien DESC Limit 4");
       return $data->result_array();
     }
 
