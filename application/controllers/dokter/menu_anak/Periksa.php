@@ -8,6 +8,7 @@
       $this->load->model('model_bayi');
       $this->load->model('model_kesehatan_anak');
       $this->load->model('model_rumahSakit');
+      $this->load->model('model_pegawai');
       if( !$this->session->userdata('pegawai'))
 				redirect('pegawai');
     }

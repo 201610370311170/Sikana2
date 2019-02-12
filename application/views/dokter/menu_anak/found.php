@@ -150,6 +150,10 @@
 
                     <?php foreach ($riwayat as $riwayat): {
 
+                      //Konversi id menjadi Nama Dokter
+                      $data = $this->model_pegawai->getDataName($riwayat['dokter_periksa']);
+
+
                       // echo "<pre>";
                       // print_r($riwayat);
                       // echo "</pre>";
@@ -178,7 +182,7 @@
                         if($riwayat['dokter_periksa'] == 0){
                           echo "";
                         }else{
-                          echo $riwayat['dokter_periksa'];
+                          echo $data[0]['Nama'];
                         }?>
                       </td>
                     </tr>

@@ -33,8 +33,7 @@
 
 
       //Get Nama Dokter
-      $riwayat      = $this->model_kesehatan_ibu->getAllData($NIK);
-
+      // $riwayat      = $this->model_kesehatan_ibu->getAllData($NIK);
 
       $this->load->view('dokter/include/header');
       $this->load->view('dokter/menu_ibu/found',$data);
