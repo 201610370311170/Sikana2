@@ -87,15 +87,20 @@
         $this->session->set_flashdata('updated','<div class="alert alert-success" role="alert" style="width:40%;margin-left: 200px;">
               Data telah ditambahkan
         </div>)');
-        redirect('dokter/menu_ibu/periksa/found/'.$NIK);
+        redirect('dokter/menu_ibu/Periksa/view_details/'.$id_periksa);
+
       }
     }
+
+
+
 
     function cetak(){
 
 
-      $NIK_Ibu = $this->uri->segment(5);
-
+      $NIK_Ibu        = $this->uri->segment(5);
+      $Dokter         = $this->session->userdata('pegawai');
+      $Nama_Dokter    = $Dokter['Nama'];
 
       $Keluhan_sekarang   = $this->input->post('Keluhan_sekarang');
       $diagnosa           = $this->input->post('diagnosa');
@@ -109,8 +114,8 @@
           'Keluhan_sekarang' 		  => $Keluhan_sekarang,
           'diagnosa'	            => $diagnosa,
           'Rumah_sakit'           => $NameRS,
+          'Nama_dokter'           => $Nama_Dokter,
       );
-
 
       $this->load->view('dokter/menu_ibu/surat_rujukan',$data);
 

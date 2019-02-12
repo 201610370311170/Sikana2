@@ -95,9 +95,10 @@
                 <?php echo $data_anak[0]['Kategori'];?>
               </p>
               <p>
-                <span style="margin-right: 89px;">NIK Ibu </span>
+                <span style="margin-right: 73px;">Nama  Ibu </span>
                 <span style="margin-right: 50px;">: </span>
-                <a href="<?php echo base_url('pegawai/menu_ibu/periksa/found/'.$data_anak[0]['NIK_Ibu'])?>" style="color:#0033cc;  text-decoration: underline;"><?php echo $data_anak[0]['NIK_Ibu'];?></a>
+                <?php $Nama_Ibu = $this->model_ibu->getNameIbu($data_anak[0]['NIK_Ibu']);?>
+                <a href="<?php echo base_url('dokter/menu_ibu/periksa/found/'.$data_anak[0]['NIK_Ibu'])?>" style="color:#0033cc;  text-decoration: underline;"><?php echo $Nama_Ibu[0]['Nama'];?></a>
               </p>
               <br><br>
               <button class="btn btn-outline-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -130,7 +131,7 @@
     <!-- ***** Dento Pricing Table Area Start ***** -->
       <section class="dento-pricing-table-area mt-50 section-padding-0-100">
         <div style="height: 250px;" class="container">
-          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_anak/periksa/tambah_daftar_riwayat/'.$data_anak[0]['id_bayi'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
+          <!-- <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_anak/periksa/tambah_daftar_riwayat/'.$data_anak[0]['id_bayi'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a> -->
           <div class="row" >
             <div class="col-12" >
               <div class="dento-price-table table-responsive">
@@ -244,10 +245,10 @@
           <div class="modal-dialog">
 
             <!-- Modal content-->
-            <form action="<?php echo base_url('pegawai/menu_anak/periksa/cetak/'.$data_anak[0]['id_bayi'])?>" method="post">
+            <form action="<?php echo base_url('dokter/menu_anak/periksa/cetak/'.$data_anak[0]['id_bayi'])?>" method="post">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h4 class="modal-title">Tambahkan Data</h4>
+                  <h4 class="modal-title">Buat Surat Rujukan Rumah Sakit</h4>
                 </div>
                   <div class="modal-body">
                         <label>Keluhan</label>

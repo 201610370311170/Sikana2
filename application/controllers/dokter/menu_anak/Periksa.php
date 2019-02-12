@@ -116,6 +116,8 @@
     function cetak(){
 
       $id_bayi = $this->uri->segment(5);
+      $Dokter         = $this->session->userdata('pegawai');
+      $Nama_Dokter    = $Dokter['Nama'];
       // $data_ibu = $this->model_ibu->getAllData($NIK_Ibu);
 
       $Keluhan_sekarang = $this->input->post('Keluhan_sekarang');
@@ -129,6 +131,7 @@
           'Keluhan_sekarang' 		  => $Keluhan_sekarang,
           'diagnosa'	            => $diagnosa,
           'Rumah_sakit'           => $Rumah_sakit,
+          'Nama_dokter'           => $Nama_Dokter,
       );
 
       $this->load->view('dokter/menu_anak/surat_rujukan',$data);

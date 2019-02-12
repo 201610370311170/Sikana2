@@ -53,7 +53,7 @@ $this->load->view('template/sidebar');
                     </th>
                     <th class="th-sm">Tanggal Lahir
                     </th>
-                    <th class="th-sm">NIK Ibu
+                    <th class="th-sm">Nama Ibu
                     </th>
                     <th class="th-sm">Kesehatan
                     </th>
@@ -64,6 +64,9 @@ $this->load->view('template/sidebar');
                 <tbody>
 
                   <?php foreach ($records as $rec):
+                    //get Nama Ibu
+                    $Nama_Ibu = $this->model_ibu->getNameIbu($rec['NIK_Ibu']);
+
 
                     //Age
                     $today       = new DateTime();
@@ -88,7 +91,7 @@ $this->load->view('template/sidebar');
                       ?></td>
                       <td><?php echo $rec['Jenis_kelamin']?></td>
                       <td><?php echo $newDate?></td>
-                      <td><?php echo $rec['NIK_Ibu']?></td>
+                      <td><?php echo $Nama_Ibu[0]['Nama']?></td>
                       <td>
                         <a href="<?php echo base_url('admin/bayi/kesehatan/').$rec['id_bayi'];?>" class="btn btn-light" ><i class="fa fa-book">&nbspLihat Kesehatan</i></a>
                       </td>

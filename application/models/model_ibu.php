@@ -48,6 +48,11 @@
       return $data->result_array();
     }
 
+    function getNameIbu($where=""){
+      $data = $this->db->query("select Nama from ibu where NIK = ".$where);
+      return $data->result_array();
+    }
+
     function getAllNIK($where=""){
       $data = $this->db->query("select NIK from ibu");
       return $data->result_array();

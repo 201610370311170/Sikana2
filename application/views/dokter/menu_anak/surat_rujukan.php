@@ -37,53 +37,58 @@
           Kepada Yth<br>
           ..............................<br><br>
           Dengan Hormat <br>
-          Mohon pemeriksaan dan pengobatan lebih lanjut terhadap pasien:
+          Mohon pemeriksaan dan pengobatan lebih lanjut terhadap pasien :
         </p>
         <table style="margin-left: 30px;">
-          <tr>
-          <td valign="top">Tanggal</td>
-          <td valign="top">:</td>
+          <td valign="top">Nama</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
+          <td valign="top"><?php echo $id_bayi[0]['Nama'];?></td>
+          </tr>
+          <td valign="top">Tanggal Periksa</td>
+          <td valign="top">&nbsp:</td>
           <td valign="top"><?php echo "" . date("d-m-Y") . "<br>";?></td>
           </tr>
           <tr>
           <td valign="top">NIK Pasien</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
           <td valign="top"><?php echo $id_bayi[0]['id_bayi']; ?></td>
           </tr>
           <tr>
-          <td valign="top">Nama</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
-          <td valign="top"><?php echo $id_bayi[0]['Nama'];?></td>
-          </tr>
-          <tr>
-          <td valign="top">NIK Ibu</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
-          <td valign="top"><?php echo $id_bayi[0]['NIK_Ibu'];?></td>
-          </tr>
           <tr>
           <td valign="top">Keluhan</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
           <td valign="top"><?php echo $Keluhan_sekarang;  ?></td>
           </tr>
           <tr>
           <td valign="top">Diagnosa</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
           <td valign="top"><?php echo $diagnosa;  ?></td>
           </tr>
           <tr>
           <td valign="top">Rumah Sakit</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
           <td valign="top"><?php echo $Rumah_sakit;  ?></td>
           </tr>
           <tr>
           <td valign="top">Kategori</td>
-          <td valign="top">:&nbsp;&nbsp;</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
           <td valign="top"><?php echo $id_bayi[0]['Kategori'];  ?></td>
           </tr>
+          <tr>
+          <td valign="top">NIK Ibu</td>
+          <td valign="top">&nbsp:&nbsp;&nbsp;</td>
+          <td valign="top"><?php echo $id_bayi[0]['NIK_Ibu'];?></td>
+          </tr>
+          <tr>
+          <td valign="top">Nama Dokter</td>
+          <td valign="top">&nbsp:</td>
+          <td valign="top"><?php echo $Nama_dokter;?></td>
+          </tr>
+          <tr>
 
       </table>
       <br>
-      <p style="color:black; margin-left:10px;"> Demikian surat rujukan ini dibuat dan sangat diharapkan balasannya.   Atas ketersediaanya saya ucapkan terimakasih</p>
+      <p style="color:black; margin-left:10px;"> Demikian surat rujukan ini dibuat dan sangat diharapkan balasannya.   Atas ketersediaannya saya ucapkan terimakasih</p>
       <br><br><br>
       <div>
       <p style="color:black; text-align: right; margin-right: 20px;">

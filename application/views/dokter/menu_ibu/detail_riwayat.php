@@ -72,7 +72,7 @@
                   <input type="text" class="form-control" value="<?php echo $riwayat['Umur_kehamilan']. " Minggu"?>"  readonly>
                 </div>
 
-              
+
 
                 <label class="control-label col-sm-4"  style="margin-bottom:20px;">Umur Kehamilan:</label>
                 <div class="col-sm-8" style="margin-bottom:20px;">
@@ -94,12 +94,17 @@
                   <input type="text" class="form-control"  value="<?php echo $riwayat['Denyut_jantung_janin']." / menit"?>" readonly>
                 </div>
 
-
-
                 <label class="control-label col-sm-4"  style="margin-bottom:20px;">Keluhan Sekarang:</label>
                 <div class="col-sm-8" style="margin-bottom:20px;">
                   <textarea class="form-control" placeholder="<?php echo $riwayat['Keluhan_sekarang']?>" readonly></textarea>
                 </div>
+
+
+                <label class="control-label col-sm-4"  style="margin-bottom:20px;">Diagnosa:</label>
+                <div class="col-sm-8" style="margin-bottom:20px;">
+                  <input class="form-control" placeholder="<?php echo $riwayat['Diagnosa']?>" readonly>
+                </div>
+
 
                 <div class="form-group">
                   <div class="col-12" style="margin-bottom:30px;margin-left:530px; margin-top:30px;">
