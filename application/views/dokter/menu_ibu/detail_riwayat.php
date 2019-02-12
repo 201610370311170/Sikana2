@@ -72,6 +72,7 @@
                   <input type="text" class="form-control" value="<?php echo $riwayat['Umur_kehamilan']. " Minggu"?>"  readonly>
                 </div>
 
+              
 
                 <label class="control-label col-sm-4"  style="margin-bottom:20px;">Umur Kehamilan:</label>
                 <div class="col-sm-8" style="margin-bottom:20px;">

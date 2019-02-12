@@ -13,9 +13,9 @@
     }
 
     function index(){
-      $this->load->view('pegawai/include/header');
-      $this->load->view('pegawai/menu_anak/periksa');
-      $this->load->view('pegawai/include/footer');
+      $this->load->view('dokter/include/header');
+      $this->load->view('dokter/menu_anak/periksa');
+      $this->load->view('dokter/include/footer');
     }
 
     function search(){
@@ -24,13 +24,13 @@
 
       if($this->db->get_where('bayi', array('id_bayi' => $this->input->post('id_bayi', true)))->num_rows() > 0)
       {
-        redirect('/pegawai/menu_anak/periksa/found/'.$data_anak);
+        redirect('/dokter/menu_anak/periksa/found/'.$data_anak);
       }
       else{
         $this->session->set_flashdata('notfound','<div class="alert alert-danger" role="alert">
             <b>Maaf</b>, Data tidak ditemukan
           </div>');
-        redirect('/pegawai/menu_anak/periksa');
+        redirect('/dokter/menu_anak/periksa');
       }
     }
 
@@ -42,9 +42,11 @@
       $data['id_data']      = $this->model_kesehatan_anak->getID_Data();
       $data['rumah_sakit']  = $this->model_rumahSakit->getData();
 
-      $this->load->view('pegawai/include/header');
-      $this->load->view('pegawai/menu_anak/found',$data);
-      $this->load->view('pegawai/include/footer');
+
+
+      $this->load->view('dokter/include/header');
+      $this->load->view('dokter/menu_anak/found',$data);
+      $this->load->view('dokter/include/footer');
     }
 
     function tambah_daftar_riwayat($id_bayi){
@@ -53,21 +55,23 @@
       $data['data_anak'] = $id_bayi;
       $data['NIK_Ibu'] = $this->model_bayi->getData_NIK_Ibu($id_bayi);
 
-
-
-      $this->load->view('pegawai/include/header');
-      $this->load->view('pegawai/menu_anak/tambah_daftar_riwayat',$data);
-      $this->load->view('pegawai/include/footer');
+      $this->load->view('dokter/include/header');
+      $this->load->view('dokter/menu_anak/tambah_daftar_riwayat',$data);
+      $this->load->view('dokter/include/footer');
     }
 
     function tambah_daftar(){
+
 
       $Tanggal_periksa          = $this->input->post('Tanggal_periksa');
       $Tekanan_darah            = $this->input->post('Tekanan_darah');
       $Berat_badan              = $this->input->post('Berat_badan');
       $Tinggi_badan             = $this->input->post('Tinggi_badan');
       $Keluhan_sekarang         = $this->input->post('Keluhan_sekarang');
+      $Obat                     = $this->input->post('Obat');
       $id_bayi                  = $this->input->post('id_bayi');
+      $NIK_Ibu                  = $this->input->post('NIK_ibu');
+      $dokter_periksa           = $this->input->post('dokter_periksa');
 
       $data	= array(
           'tanggal_periksa'      => $Tanggal_periksa,
@@ -75,35 +79,36 @@
           'berat_badan'          => $Berat_badan,
           'tinggi_badan'         => $Tinggi_badan,
           'keluhan_sekarang' 		 => $Keluhan_sekarang,
+          'obat'			           => $Obat,
           'id_bayi'              => $id_bayi,
-
+          'NIK_Ibu'              => $NIK_Ibu,
+          'dokter_periksa'       => $dokter_periksa,
       );
 
       $this->model_kesehatan_anak->register($data);
 
-      redirect('pegawai/menu_anak/periksa/found/'.$id_bayi);
+      redirect('dokter/menu_anak/periksa/found/'.$id_bayi);
     }
 
 
     function update_riwayat($id_bayi){
 
 
-      $Keluhan_sekarang     = $this->input->post('Keluhan_sekarang');
-      $Obat                 = $this->input->post('Obat');
+      $diagnosa             = $this->input->post('Keluhan_sekarang');
+
       $id_periksa           = $this->input->post('id_periksa');
       $dokter_periksa       = $this->input->post('dokter_periksa');
 
       $data	= array(
-          'Keluhan_sekarang' 		 => $Keluhan_sekarang,
-          'Obat'			           => $Obat,
-
+          'diagnosa' 		         => $diagnosa,
+          'dokter_periksa'       => $dokter_periksa,
       );
       $where = array('id_periksa' => $id_periksa);
 
       $res = $this->model_kesehatan_anak->update_data('kesehatan_anak',$data,$where);
       if($res>=1){
 
-        redirect('pegawai/menu_anak/periksa/found/'.$id_bayi);
+        redirect('dokter/menu_anak/periksa/found/'.$id_bayi);
       }
     }
 
@@ -125,13 +130,9 @@
           'Rumah_sakit'           => $Rumah_sakit,
       );
 
-      $this->load->view('pegawai/menu_anak/surat_rujukan',$data);
+      $this->load->view('dokter/menu_anak/surat_rujukan',$data);
 
     }
-
-
-
-
 
 
   }

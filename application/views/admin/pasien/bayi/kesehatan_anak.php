@@ -107,9 +107,6 @@ $this->load->view('template/sidebar');
             </h3>
             <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> -->
             <div style=" overflow-x:auto;">
-            <div class="pull-right" style="margin-bottom:20px;margin-right:10px;">
-              <a class="btn btn-success" data-toggle="modal" data-target="#myModalRegister"><i class="fa fa-plus">&nbspTambahkan Data</i></a>
-            </div>
               <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                   <tr>

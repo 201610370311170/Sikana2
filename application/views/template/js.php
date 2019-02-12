@@ -10,7 +10,7 @@
 <script src="<?php echo base_url('assets/js/jquery-3.3.1.js') ?>"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
 <!-- Bootstrap 3.3.2 JS -->
-<!-- <script src="<?php echo base_url('assets/AdminLTE-2.0.5/bootstrap/js/bootstrap.min.js') ?>" type="text/javascript"></script> -->
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/bootstrap/js/bootstrap.min.js') ?>" type="text/javascript"></script>
 <!-- SlimScroll -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/slimScroll/jquery.slimScroll.min.js') ?>" type="text/javascript"></script>
 <!-- FastClick -->

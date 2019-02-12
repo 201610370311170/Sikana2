@@ -15,7 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     public function index(){
       $this->load->model('model_pegawai');
-      $data['data'] = $this->model_pegawai->getData();
+      $data['data']   = $this->model_pegawai->getData();
+      $data['data2']  = $this->model_pegawai->getNIP();
       $this->load->view('admin/pegawai/beranda',$data);
     }
 
@@ -111,5 +112,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   	}
 
+    function Change_Password(){
+      print_r($_POST);
+      $NIP      = $this->input->post('NIP');
+      $password = md5($this->input->post('password'));
+
+      $data	= array(
+          'Password' 			=> $password
+          );
+          $where = array('NIP' => $NIP);
+
+      $res = $this->model_pegawai->update_data('pegawai',$data,$where);
+        if($res>=1){
+          $this->session->set_flashdata('success_password', '<div class="alert alert-success" role="alert">
+          <b>Selamat,</b>Kata Sandi Berhasil dirubah
+          </div>');
+          redirect('/admin/pegawai');
+        }
+      }
   }
 ?>

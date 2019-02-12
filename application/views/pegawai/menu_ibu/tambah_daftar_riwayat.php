@@ -59,12 +59,8 @@
                   <input type="number" name="Denyut_jantung_janin" class="form-control mb-30" required placeholder="per menit">
                 </div>
                 <div class="col-12">
-                  <label> <b>Keluhan</b> </label>
-                  <textarea type="text" name="Keluhan_sekarang" class="form-control mb-30" placeholder=""></textarea>
-                </div>
-                <div class="col-12">
-                  <label> <b>Obat</b> </label>
-                  <input type="text" name="Obat" class="form-control mb-30"  placeholder="Obat">
+                  <label> <b>Keluhan</b><span style="color:red">&nbsp*<span></label>
+                  <textarea type="text" name="Keluhan_sekarang" class="form-control mb-30" required></textarea>
                 </div>
 
                 <?php

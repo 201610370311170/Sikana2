@@ -103,8 +103,7 @@
               <button class="btn btn-outline-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
               </button>
-              <!-- <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
-              </a> -->
+              <a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
               </div>
           </div>
         </div>
@@ -139,37 +138,49 @@
                   <thead>
                     <tr>
                       <th scope="col">Tanggal Periksa</th>
-                      <th scope="col">Keluhan Sekarang</th>
+                      <th scope="col">Keluhan</th>
+                      <th scope="col">Diagnosa</th>
                       <th scope="col">Tekanan Darah</th>
                       <th scope="col">Berat Badan</th>
                       <th scope="col">Tinggi Badan</th>
-
-
+                      <th scope="col">Dokter Periksa</th>
                     </tr>
                   </thead>
                   <tbody>
 
                     <?php foreach ($riwayat as $riwayat): {
+
+                      // echo "<pre>";
+                      // print_r($riwayat);
+                      // echo "</pre>";
                       // Date
                       $date = $riwayat['tanggal_periksa'];
                       $newDate = date("d-m-Y", strtotime($date));
                     }
                     ?>
                     <tr>
-                      <th><?php echo $newDate;?></th>
-
+                      <td><?php echo $newDate;?></td>
+                      <td><?php echo $riwayat['keluhan_sekarang'];?></td>
                       <td>
                         <?php
-                          if($riwayat['keluhan_sekarang'] != NULL){
-                            echo $riwayat['keluhan_sekarang'];
+                          if($riwayat['Diagnosa'] != NULL){
+                            echo $riwayat['Diagnosa'];
                           } else{ ?>
                             <a href="#" data-toggle="modal" data-target="#modal<?php echo $riwayat['id_periksa'];?>" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Tambahkan </i></a>
                         <?php } ?>
                       </td>
-                      <td><?php echo $riwayat['tekanan_darah']." mmHg"?></td>
-                      <td><?php echo $riwayat['berat_badan']." Kg"?></td>
-                      <td><?php echo $riwayat['tinggi_badan']." cm"?></td>
-                      <!-- <td><a href="<?php echo base_url('pegawai/menu_anak/Periksa/view_details/').$riwayat['id_periksa']?>">Lihat Detail</td> -->
+
+                      <td><?php echo $riwayat['tekanan_darah']. " mmhg";?></td>
+                      <td><?php echo $riwayat['berat_badan']." Kg";?></td>
+                      <td><?php echo $riwayat['tinggi_badan']." cm";?></td>
+                      <td>
+                        <?php
+                        if($riwayat['dokter_periksa'] == 0){
+                          echo "";
+                        }else{
+                          echo $riwayat['dokter_periksa'];
+                        }?>
+                      </td>
                     </tr>
                   </tbody>
                 <?php endforeach;?>
@@ -194,7 +205,7 @@
       <div class="modal-dialog">
 
         <!-- Modal content-->
-        <form action="<?php echo base_url('pegawai/menu_anak/periksa/update_riwayat/'.$data_anak[0]['id_bayi'])?>" method="post">
+        <form action="<?php echo base_url('dokter/menu_anak/periksa/update_riwayat/'.$data_anak[0]['id_bayi'])?>" method="post">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Tambahkan Data</h4>
@@ -204,8 +215,7 @@
                     <textarea type="text" class="form-control" value="" required name="Keluhan_sekarang"></textarea>
               </div>
               <div class="modal-body">
-                    <label>Obat / Resep</label>
-                    <input type="text" class="form-control" value="" name="Obat" required ></input>
+
                     <input type="hidden" class="form-control" value="<?php echo $id['id_periksa']?>" name="id_periksa" required ></input>
                     <input type="hidden" class="form-control" value="<?php echo $pegawai['NIP'];?>" name="dokter_periksa" required ></input>
 

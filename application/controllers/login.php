@@ -26,7 +26,7 @@
         $this->session->set_userdata('admin','1');
         redirect('admin/dashboard');
       }
-      else if($array['Jabatan'] == 'Bidan' || $array['Jabatan'] == 'Dokter' ){
+      else if($array['Jabatan'] == 'Bidan'){
 
         $NIP = addslashes($this->input->post('NIP'));
         $data = $this->model_pegawai->getAllData($NIP);
@@ -39,6 +39,20 @@
 
         $this->session->set_userdata('pegawai',$dataPegawai);
         redirect('pegawai/dashboard');
+      }
+      else if( $array['Jabatan'] == 'Dokter' ){
+
+                $NIP = addslashes($this->input->post('NIP'));
+                $data = $this->model_pegawai->getAllData($NIP);
+                $dataPegawai = array(
+                  'NIP' 		      => $data[0]['NIP'],
+                  'Nama'					=> $data[0]['Nama'],
+                  'Alamat' 				=> $data[0]['Alamat'],
+                  'Jabatan'       => $data[0]['Jabatan']
+                );
+
+                $this->session->set_userdata('pegawai',$dataPegawai);
+                redirect('dokter/dashboard');
       }
       else{
         $this->session->set_flashdata('warning', 'Masuk gagal. Silahkan coba lagi');

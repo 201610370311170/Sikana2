@@ -64,6 +64,10 @@
         return $count->row();
       }
 
+      function getNIP(){
+        $count = $this->db->query("select NIP from pegawai");
+        return $count->result_array();
+      }
 
 
 

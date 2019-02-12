@@ -23,6 +23,8 @@
     <!-- card info -->
     <div class="main" id="main">
     <div class="box" id="box">
+      <?php echo $this->session->flashdata('updated');?>
+
       <div class="box-body" style="margin-top:50px; margin-left: 200px; background-color:#f0f0f5; padding: 50px; width: 40%;border-radius: 10px;">
           <h3 style="margin-bottom:50px; align:center">
             <i class="fa fa-user"></i> &nbsp <span >Data Pasien</span>
@@ -85,8 +87,7 @@
               <button class="btn btn-outline-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-book">&nbsp Lihat Riwayat Pemeriksaan</i>
               </button>
-                <!-- <a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a> -->
-
+                <a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalRujukan" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Buat Surat Rujukan </i></a>
               </div>
           </div>
         </div>
@@ -113,7 +114,7 @@
     <!-- ***** Dento Pricing Table Area Start ***** -->
       <section class="dento-pricing-table-area mt-50 section-padding-0-100" >
         <div style="margin-bottom:100px; max-height: 250px;" class="container">
-          <a class="btn btn-secondary" href="<?php echo base_url('pegawai/menu_ibu/periksa/tambah_daftar_riwayat/'.$data_ibu['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a>
+          <!-- <a class="btn btn-secondary" href="<?php echo base_url('dokter/menu_ibu/periksa/tambah_daftar_riwayat/'.$data_ibu['NIK'])?>" style="margin-left:2px;"><i class="fa fa-plus">&nbsp Tambahkan Data</i></a> -->
           <div class="row">
             <div class="col-12" style="overflow-y: scroll; height: 500px">
               <div class="dento-price-table table-responsive">
@@ -121,8 +122,9 @@
                   <thead>
                     <tr>
                       <th scope="col">Tanggal Periksa</th>
-                      <th scope="col">Keluhan</th>
-                      <th scope="col">Detail Riwayat</th>
+                      <th scope="col">Diagnosa</th>
+                      <th scope="col">Dokter Periksa</th>
+                      <th scope="col">Detail Kesehatan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -139,17 +141,25 @@
                     ?>
                     <tr>
                       <td><?php echo $newDate;?></td>
-                      <td><?php echo $riwayat['Keluhan_sekarang']?></td>
+                      <td>
+                        <?php
+                          if($riwayat['Diagnosa'] != NULL){
+                            echo $riwayat['Diagnosa'];
+                          } else{ ?>
+                            <a href="#" data-toggle="modal" data-target="#modal<?php echo $riwayat['id_periksa'];?>" data-whatever="@mdo"><i class="fa fa-plus-circle">&nbsp Tambahkan </i></a>
+                        <?php } ?>
+                      </td>
 
-                      <!-- <td>
+
+                      <td>
                         <?php
                         if($riwayat['dokter_periksa'] == 0){
                           echo "";
                         }else{
                           echo $data[0]['Nama'];
                         }?>
-                      </td> -->
-                      <td><a href="<?php echo base_url('pegawai/menu_ibu/Periksa/view_details/').$riwayat['id_periksa']?>">Lihat Detail</td>
+                      </td>
+                      <td><a href="<?php echo base_url('dokter/menu_ibu/Periksa/view_details/').$riwayat['id_periksa']?>">Lihat Detail</td>
 
                     </tr>
                   </tbody>
@@ -175,22 +185,19 @@
       <div class="modal-dialog">
 
         <!-- Modal content-->
-        <form action="<?php echo base_url('pegawai/menu_ibu/periksa/update_riwayat/'.$data_ibu['NIK'])?>" method="post">
+        <form action="<?php echo base_url('dokter/menu_ibu/periksa/update_riwayat/'.$data_ibu['NIK'])?>" method="post">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Tambahkan Data</h4>
             </div>
               <div class="modal-body">
-                    <label>Keluhan</label>
-                    <textarea type="text" class="form-control" value="" required name="Keluhan_sekarang"></textarea>
+                    <label>Diagnosa</label>
+                    <textarea type="text" class="form-control" value="" required name="Diagnosa"></textarea>
               </div>
-              <div class="modal-body">
-                    <label>Obat / Resep</label>
-                    <input type="text" class="form-control" value="" name="Obat" required ></input>
-                    <input type="hidden" class="form-control" value="<?php echo $id['id_periksa']?>" name="id_periksa" required ></input>
-                    <input type="hidden" class="form-control" value="<?php echo $pegawai['NIP'];?>" name="dokter_periksa" required ></input>
-
               <div class="modal-footer">
+                <input type="hidden" name="dokter_periksa" value="<?php echo $pegawai['NIP']?>">
+                <input type="hidden" name="id_periksa" value="<?php echo $id['id_periksa'] ?>">
+
                 <input type="submit" class="btn btn-primary" value="Submit" style="width:100px;"></input>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
@@ -211,7 +218,7 @@
         <div class="modal-dialog">
 
           <!-- Modal content-->
-          <form action="<?php echo base_url('pegawai/menu_ibu/periksa/cetak/'.$data_ibu['NIK'])?>" method="post">
+          <form action="<?php echo base_url('dokter/menu_ibu/periksa/cetak/'.$data_ibu['NIK'])?>" method="post">
             <div class="modal-content">
               <div class="modal-header">
                 <h4 class="modal-title">Buat Surat Rujukan Rumah Sakit</h4>

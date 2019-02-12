@@ -21,6 +21,7 @@ $this->load->view('template/sidebar');
 
 <!-- Main content -->
 <section class="content">
+        <?php echo $this->session->flashdata('success_password');?>
         <?php echo $this->session->flashdata('success');?>
         <?php echo $this->session->flashdata('danger');?>
         <div class="main" id="main">
@@ -66,6 +67,7 @@ $this->load->view('template/sidebar');
                     <td>
                       <!-- <button type="button" class="btn btn-link"><i class="fa fa-eye"></i></button> -->
                       <a href="<?php echo base_url().'admin/pegawai/edit/'.$NIP?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                      <a class="btn btn-warning" data-toggle="modal" data-target="#myModalPassword<?php echo $NIP?>"><i class="fa fa-key"></i></a>
                       <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $NIP?>"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
@@ -77,6 +79,41 @@ $this->load->view('template/sidebar');
           </div>
           <!-- /.card -->
         </div>
+
+
+
+                <!-- Modal password-->
+                <?php foreach ($data2 as $data2):
+
+
+                ?>
+                <div class="modal fade" id="myModalPassword<?php echo $data2['NIP']?>" role="dialog">
+                  <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Ubah Kata Sandi</h4>
+                    </div>
+                    <form action="<?php echo base_url('admin/Pegawai/Change_Password')?>" name="Password" method="post">
+                      <div class="modal-body">
+                            <label>Kata Sandi Baru</label>
+                            <input type="hidden" class="form-control" required name="NIP" value="<?php echo $data2['NIP'];?>" >
+                            <input type="password"  class="form-control" name="password" required>
+                      </div>
+                    <div class="modal-footer">
+                      <input type="submit" name="submit" class="btn btn-success" value="Submit" style="width:100px;"></input>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+              </div>
+              <?php endforeach; ?>
+                <!-- modal password -->
+
+
+
 
         <!-- Modal register-->
         <div class="modal fade" id="myModalRegister" role="dialog">
@@ -124,8 +161,11 @@ $this->load->view('template/sidebar');
         </div>
         <!-- modal register -->
 
+
+
+
         <!-- Modal delete-->
-        <?php foreach ($data as $rec):
+        <?php foreach ($data as $rec1):
             $NIP     = $rec['NIP'];
             $Nama    = $rec['Nama'];
             $Jabatan = $rec['Jabatan'];

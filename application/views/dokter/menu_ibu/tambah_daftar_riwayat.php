@@ -5,6 +5,7 @@
       <div class="row">
         <div class="col-12">
           <nav aria-label="breadcrumb">
+
           </nav>
         </div>
       </div>
@@ -23,29 +24,27 @@
               <div class="line"></div>
             </div>
 
-              <?php echo form_open('pegawai/menu_anak/periksa/tambah_daftar/');?>
+              <?php echo form_open('dokter/menu_ibu/periksa/tambah_daftar');?>
               <div class="row">
                 <div class="col-12">
                   <label> <b>Tanggal Periksa</b><span style="color:red">&nbsp*<span> </label>
-                  <input type="hidden" name="id_bayi" value="<?php echo $data_anak?>">
                   <input type="date" name="Tanggal_periksa" class="form-control mb-30" required placeholder="Tanggal Periksa">
                 </div>
                 <div class="col-12">
-                  <label> <b>Tekanan Darah</b><span style="color:red">&nbsp*<span> </label>
-                  <input type="number" name="Tekanan_darah" class="form-control mb-30" required  placeholder="Tekanan Darah (mmhg)">
+                  <label> <b>Diagnosa</b><span style="color:red">&nbsp*<span> </label>
+                  <textarea type="text" name="Diagnosa" class="form-control mb-30" required></textarea>
                 </div>
-                <div class="col-12">
-                  <label> <b>Berat Badan</b><span style="color:red">&nbsp*<span></label>
-                  <input type="number" name="Berat_badan" class="form-control mb-30" required placeholder="Berat Badan (Kg)">
-                </div>
-                <div class="col-12">
-                  <label> <b>Tinggi Badan</b><span style="color:red">&nbsp*<span> </label>
-                  <input type="number" name="Tinggi_badan" class="form-control mb-30" required placeholder="Tinggi Badan (cm)">
-                </div>
-                <div class="col-12">
-                  <label> <b>Keluhan</b> </label>
-                  <textarea type="text" name="Keluhan_sekarang" class="form-control mb-30" placeholder=""></textarea>
-                </div>
+
+
+                <?php
+
+                  $dokter_periksa = $this->session->userdata('pegawai');
+
+                ?>
+                <input type="hidden" name="NIK_Ibu" value="<?php echo $data_ibu;?>">
+                <input type="hidden" name="dokter_periksa" value="<?php echo $dokter_periksa['NIP'];?>">
+
+
                 <div class="col-12">
                   <button type="submit" class="btn dento-btn">Simpan</button>
                 </div>

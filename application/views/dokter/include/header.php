@@ -77,7 +77,7 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="<?php echo base_url('sikana');?>">Beranda</a></li>
+                  <li><a href="<?php echo base_url('dokter/Dashboard');?>">Beranda</a></li>
                   <!-- if not login -->
                   <?php if(!$this->session->userdata('pegawai')){?>
                     <li><a href="<?php echo base_url('sikana/tutorial')?>">Tutorial</a></li>
@@ -87,10 +87,7 @@
                     <!-- if login -->
                     <!-- <li><a href="<?php echo base_url('#')?>">Daftar</a></li> -->
                     <!-- <li><a href="<?php echo base_url('pegawai/Daftar')?>">Daftar</a></li> -->
-                    <li><a href="<?php echo base_url('pegawai/Cari')?>">Cari</a></li>
-
-                    <!-- <li><a href="<?php echo base_url('pegawai/menu_ibu/periksa')?>">Ibu</a></li>
-                    <li><a href="<?php echo base_url('pegawai/menu_anak/periksa')?>">Anak</a></li> -->
+                    <li><a href="<?php echo base_url('dokter/Cari')?>">Cari</a></li>
 
                     <li>
                     <a  href="#" role="text" id="dropdownMenuLink" data-toggle="dropdown">

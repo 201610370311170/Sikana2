@@ -23,11 +23,10 @@
               <div class="line"></div>
             </div>
 
-              <?php echo form_open('pegawai/menu_anak/periksa/tambah_daftar/');?>
+              <?php echo form_open('pegawai/menu_anak/periksa/tambah_daftar');?>
               <div class="row">
                 <div class="col-12">
                   <label> <b>Tanggal Periksa</b><span style="color:red">&nbsp*<span> </label>
-                  <input type="hidden" name="id_bayi" value="<?php echo $data_anak?>">
                   <input type="date" name="Tanggal_periksa" class="form-control mb-30" required placeholder="Tanggal Periksa">
                 </div>
                 <div class="col-12">
@@ -45,6 +44,10 @@
                 <div class="col-12">
                   <label> <b>Keluhan</b> </label>
                   <textarea type="text" name="Keluhan_sekarang" class="form-control mb-30" placeholder=""></textarea>
+                </div>
+                <div class="col-12">
+                  <label> <b>Obat</b> </label>
+                  <input type="text" name="Obat" class="form-control mb-30"  placeholder="Obat">
                 </div>
                 <div class="col-12">
                   <button type="submit" class="btn dento-btn">Simpan</button>

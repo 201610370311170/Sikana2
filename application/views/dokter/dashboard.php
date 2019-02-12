@@ -8,19 +8,19 @@
         <!-- Welcome Slides -->
         <div class="welcome-slides owl-carousel">
           <!-- Single Welcome Slide -->
-          <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url(assets/images/5.jpg);">
+          <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background: url(../assets/images/5.jpg);">
             <div class="container h-100">
               <div class="row h-100 align-items-center">
                 <div class="col-12">
                   <!-- Welcome Text -->
                   <div class="welcome-text text-left">
-                    <h2 data-animation="fadeInUp" data-delay="100ms">SIKANA</h2>
+                    <h2 data-animationF="fadeInUp" data-delay="100ms">SIKANA</h2>
                     <p data-animation="fadeInUp" data-delay="300ms">
                       Sistem Informasi ibu dan anak mempermudah pendataan pelayanan kesehatan ibu dan anak, serta pihak rumah sakit memiliki cadangan data
                       riwayat perkembangan kesehatan pasien karena terkadang banyaknya kesalahan perekapan data yang diakibatkan oleh permasalahan pertama
                       di atas mengakibatkan Petugas kesehatan kesulitan dalam merekam riwayat kesehatan dari ibu dan anaknya. Sehingga diharapkan dapat
                       memberikan penanganan yang lebih efetif dan solutif nantinya.</p>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -31,6 +31,7 @@
       <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** Dento Dentist Area Start ***** -->
+    <section class="dentist-area section-padding-100-0">
 
     <!-- ***** Blog Area Start ***** -->
     <section class="dento-blog-area section-padding-100-0 clearfix">
@@ -49,9 +50,7 @@
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4" >
             <div class="single-blog-item mb-100" style="height:500px;">
-              <a href="#">
                 <img style="margin-left: 110px; height:150px;width:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(1).png')?>" alt="">
-              </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a class="post-title">Pengukuran Tinggi Badan Cukup Satu Kali</a>
@@ -64,9 +63,7 @@
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="single-blog-item mb-100" style="height:500px;">
-              <a href="#">
                 <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(2).png')?>" alt="">
-              </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a class="post-title">Pengukuran Tekanan Darah (tensi)</a>
@@ -81,9 +78,7 @@
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="single-blog-item mb-100" style="height:500px;">
-              <a href="#">
                 <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(3).png')?>" alt="">
-              </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a class="post-title">Pengukuran Lingkar Lengan Atas (LiLA)</a>
@@ -95,9 +90,7 @@
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="single-blog-item mb-100" style="height:500px;">
-              <a href="">
                 <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
-              </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a class="post-title">Pengukuran Tinggi Rahim</a>
@@ -108,9 +101,7 @@
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="single-blog-item mb-100" style="height:500px;">
-              <a href="#">
                 <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(5).png')?>" alt="">
-              </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a class="post-title">Penentuan Letak Janin(Presentasi Janin) dan Perhitungan Denyut Jantung Janin</a>
@@ -121,9 +112,7 @@
           <!-- Single Blog Item -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="single-blog-item mb-100" style="height:500px;">
-              <a href="#">
                 <img style="margin-left: 90px; height:150px;" src="<?php echo base_url('assets/img/bg-img/alurr(4).png')?>" alt="">
-              </a>
               <!-- Blog Content -->
               <div class="blog-content">
                 <a class="post-title">Penentuan Status Imunisasi Tetanus Toksoid (TT)</a>
